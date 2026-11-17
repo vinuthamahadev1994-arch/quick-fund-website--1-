@@ -1,0 +1,259 @@
+/* ==========================================================================
+   QUICK FUND - HERO CAROUSEL STYLES
+   ========================================================================== */
+
+.hero-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 12;
+  min-height: 340px;
+  max-height: 440px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--surface, #ffffff);
+  border: 2px solid var(--line, #e3dcf7);
+  box-shadow: 0 4px 0 var(--line, #e3dcf7), 0 24px 44px rgba(60, 20, 140, 0.2);
+}
+
+.hero-carousel-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.04);
+  transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.55s;
+  z-index: 1;
+}
+
+.hero-carousel-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  z-index: 2;
+}
+
+.slide-media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  image-rendering: auto;
+  filter: contrast(102%) brightness(98%);
+  transition: transform 6s ease-out;
+}
+
+.hero-carousel-slide.active .slide-img {
+  transform: scale(1.05);
+}
+
+/* Gradient Vignette for Text Contrast */
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 8, 48, 0.45) 0%,
+    rgba(20, 8, 48, 0.1) 40%,
+    rgba(20, 8, 48, 0.15) 60%,
+    rgba(20, 8, 48, 0.65) 100%
+  );
+  pointer-events: none;
+}
+
+/* High-Clarity Floating Badges */
+.slide-badge {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(25, 10, 60, 0.22);
+  z-index: 5;
+  pointer-events: auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: calc(100% - 32px);
+}
+
+.slide-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(25, 10, 60, 0.28);
+}
+
+.badge-top-left {
+  top: 18px;
+  left: 18px;
+  animation: floatSlow 4s ease-in-out infinite alternate;
+}
+
+.badge-bottom-right {
+  bottom: 24px;
+  right: 18px;
+  animation: floatSlow 4s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatSlow {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
+
+.badge-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--primary, #6d28d9);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+  box-shadow: 0 4px 10px rgba(109, 40, 217, 0.35);
+  flex-shrink: 0;
+}
+
+.badge-icon.gold {
+  background: var(--gold, #f59e0b);
+  color: #2b1a00;
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.4);
+}
+
+.badge-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-text strong {
+  font-family: Sora, system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1b1038;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.badge-text span {
+  font-size: 12px;
+  color: #5b5575;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* Nav Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--line, #e3dcf7);
+  color: var(--primary, #6d28d9);
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 6px 18px rgba(40, 15, 100, 0.18);
+  transition: background-color 0.15s ease, transform 0.15s ease, color 0.15s ease;
+}
+
+.carousel-btn:hover {
+  background: var(--primary, #6d28d9);
+  color: #ffffff;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.prev-btn {
+  left: 12px;
+}
+
+.next-btn {
+  right: 12px;
+}
+
+/* Indicators */
+.carousel-indicators {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+  padding: 5px 12px;
+  background: rgba(15, 8, 35, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 99px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.carousel-indicators .indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-indicators .indicator.active {
+  width: 24px;
+  background: var(--gold, #f59e0b);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.8);
+}
+
+/* Dark theme overrides for carousel */
+:root[data-theme="dark"] .slide-badge,
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .slide-badge {
+    background: rgba(26, 18, 56, 0.92);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+  :root:not([data-theme="light"]) .badge-text strong {
+    color: #efeaff;
+  }
+  :root:not([data-theme="light"]) .badge-text span {
+    color: #b2a8d6;
+  }
+  :root:not([data-theme="light"]) .carousel-btn {
+    background: rgba(26, 18, 56, 0.9);
+    border-color: var(--line, #2e2358);
+    color: #a78bfa;
+  }
+}
