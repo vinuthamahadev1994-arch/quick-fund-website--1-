@@ -1,9 +1,9 @@
 /* ==========================================================================
-   QUICK FUND - RESPONSIVE STYLES & MOBILE OVERFLOW FIXES
+   QUICK FUND - PERMANENT RESPONSIVE STYLES (UNIFIED LIGHT & DARK SECTIONS)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. ROOT & MOBILE OVERFLOW PREVENTION (Fix horizontal dragging on mobile)
+   1. ROOT & MOBILE OVERFLOW PREVENTION (Zero horizontal dragging on mobile)
    -------------------------------------------------------------------------- */
 html,
 body {
@@ -22,7 +22,6 @@ body {
   max-width: 100%;
 }
 
-/* Ensure all structural containers stay within viewport */
 main,
 section,
 header,
@@ -33,7 +32,6 @@ footer,
   max-width: 100%;
 }
 
-/* Prevent Bootstrap row negative margin overflow on mobile */
 .container,
 .container-fluid {
   overflow-x: clip;
@@ -46,7 +44,7 @@ footer,
 }
 
 /* --------------------------------------------------------------------------
-   2. FIXED TOP NAVBAR (Permanently stays anchored while scrolling)
+   2. FIXED TOP NAVBAR (PERMANENT CRISP STYLING & GENEROUS SPACING)
    -------------------------------------------------------------------------- */
 .qf-nav {
   position: fixed !important;
@@ -55,33 +53,73 @@ footer,
   right: 0 !important;
   width: 100% !important;
   z-index: 1050 !important;
-  background: rgba(255, 255, 255, 0.96) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border-bottom: 1px solid var(--line, #e3dcf7) !important;
-  box-shadow: 0 4px 20px rgba(40, 15, 100, 0.08) !important;
-  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  background: #ffffff !important;
+  border-bottom: 1.5px solid #e7e0f5 !important;
+  box-shadow: 0 4px 18px rgba(40, 15, 100, 0.06) !important;
+  padding: 12px 0 !important;
+  transition: all 0.2s ease;
 }
 
-/* Ensure body starts below the fixed navbar and has space for bottom bar */
 body {
-  padding-top: 78px !important;
+  padding-top: 80px !important;
   padding-bottom: 74px !important;
 }
 
-/* Remove obsolete fixed pseudo-element that overlapped nav */
 body::before {
   display: none !important;
 }
 
 .brand-logo-img {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
   border-radius: 10px;
   flex-shrink: 0;
   display: inline-block;
   vertical-align: middle;
+}
+
+/* Dropdown Menu - Keep "Loan Against Property" completely inside the box */
+.dropdown-menu {
+  min-width: 270px !important;
+  width: max-content !important;
+  max-width: 95vw !important;
+  background: #ffffff !important;
+  border: 1.5px solid #dcd4f5 !important;
+  border-radius: 14px !important;
+  padding: 8px !important;
+  box-shadow: 0 16px 36px rgba(40, 15, 100, 0.16) !important;
+  box-sizing: border-box !important;
+}
+
+.dropdown-item {
+  color: #1b1038 !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  border-radius: 8px !important;
+  padding: 10px 16px !important;
+  white-space: nowrap !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.dropdown-item i {
+  color: #6d28d9 !important;
+  width: 20px !important;
+  text-align: center !important;
+  flex-shrink: 0 !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item.active {
+  background: #6d28d9 !important;
+  color: #ffffff !important;
+}
+
+.dropdown-item:hover i,
+.dropdown-item.active i {
+  color: #ffffff !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -94,11 +132,9 @@ body::before {
   right: 0;
   width: 100%;
   height: 64px;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-top: 1px solid var(--line, #e3dcf7);
-  box-shadow: 0 -4px 24px rgba(40, 15, 100, 0.12);
+  background: #ffffff;
+  border-top: 1.5px solid #e7e0f5;
+  box-shadow: 0 -4px 20px rgba(40, 15, 100, 0.08);
   z-index: 1040;
   display: flex;
   align-items: center;
@@ -122,12 +158,12 @@ body::before {
   align-items: center;
   justify-content: center;
   gap: 3px;
-  color: var(--muted, #5b5575);
+  color: #5b5575;
   text-decoration: none;
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
   font-family: Sora, system-ui, sans-serif;
-  padding: 6px 14px;
+  padding: 6px 16px;
   border-radius: 12px;
   transition: all 0.2s ease;
   flex: 1;
@@ -142,13 +178,13 @@ body::before {
 
 .bottom-tab:hover,
 .bottom-tab.active {
-  color: var(--primary, #6d28d9);
-  background: var(--soft, #ede9fe);
+  color: #6d28d9;
+  background: #ede9fe;
 }
 
 .bottom-tab.active i {
   transform: translateY(-2px);
-  color: var(--primary, #6d28d9);
+  color: #6d28d9;
 }
 
 /* --------------------------------------------------------------------------
@@ -156,7 +192,7 @@ body::before {
    -------------------------------------------------------------------------- */
 .floating-call-btn {
   position: fixed;
-  bottom: 80px; /* Sits comfortably above sticky bottom bar */
+  bottom: 80px;
   right: 20px;
   z-index: 1045;
   display: inline-flex;
@@ -217,10 +253,10 @@ body::before {
 }
 
 /* --------------------------------------------------------------------------
-   5. ALTERNATING LIGHT / DARK SECTIONS ARCHITECTURE
+   5. PERMANENT HIGH-CONTRAST SECTION STYLES (NEVER WASHED OUT ON ANY DEVICE)
    -------------------------------------------------------------------------- */
 
-/* LIGHT SECTIONS */
+/* LIGHT SECTIONS: Permanent Clean White & Deep Ink Typography */
 .sec-light {
   background: #ffffff !important;
   color: #1b1038 !important;
@@ -229,39 +265,121 @@ body::before {
 .sec-light h2,
 .sec-light h3 {
   color: #1b1038 !important;
+  font-weight: 700 !important;
 }
 
 .sec-light .sub,
 .sec-light p {
-  color: #5b5575 !important;
-}
-
-.sec-light .cta-in p,
-.cta-in p {
-  color: #000000 !important;
+  color: #4c4465 !important;
 }
 
 .sec-light .card3d,
 .sec-light .feat,
 .sec-light .how,
 .sec-light .calc,
-.sec-light .stat {
+.sec-light .stat,
+.sec-light .lender {
   background: #ffffff !important;
-  border: 1px solid var(--line, #e3dcf7) !important;
-  box-shadow: 0 3px 0 var(--line, #e3dcf7), 0 14px 26px rgba(50, 20, 120, 0.07) !important;
+  border: 1px solid #e3dcf7 !important;
+  box-shadow: 0 3px 0 #e3dcf7, 0 14px 26px rgba(50, 20, 120, 0.07) !important;
   color: #1b1038 !important;
 }
 
-/* DARK SECTIONS */
+.card3d h3,
+.feat h3,
+.lender h3 {
+  color: #1b1038 !important;
+  font-weight: 700 !important;
+}
+
+.card3d p,
+.feat p {
+  color: #4c4465 !important;
+}
+
+.card3d .go {
+  color: #6d28d9 !important;
+  font-weight: 700 !important;
+}
+
+/* Calculator Text */
+.calc label {
+  color: #1b1038 !important;
+  font-weight: 600 !important;
+}
+
+.calc output {
+  color: #6d28d9 !important;
+  font-weight: 700 !important;
+}
+
+.emi small {
+  color: #5b5575 !important;
+}
+
+.emi strong {
+  color: #1b1038 !important;
+  font-weight: 700 !important;
+}
+
+.emi dt {
+  color: #5b5575 !important;
+}
+
+.emi dd {
+  color: #1b1038 !important;
+  font-weight: 600 !important;
+}
+
+/* Lender Card Text */
+.lender h3 {
+  color: #1b1038 !important;
+}
+
+.lender .rate {
+  color: #6d28d9 !important;
+  font-weight: 700 !important;
+}
+
+.lender .rate small {
+  color: #5b5575 !important;
+}
+
+.lender dt {
+  color: #5b5575 !important;
+}
+
+.lender dd {
+  color: #1b1038 !important;
+  font-weight: 600 !important;
+}
+
+.lender .hint {
+  color: #5b5575 !important;
+}
+
+.lender .hint b {
+  color: #1b1038 !important;
+}
+
+/* Partners */
+.partners span {
+  background: #f8f6fc !important;
+  border: 1px solid #e3dcf7 !important;
+  color: #1b1038 !important;
+  font-weight: 600 !important;
+}
+
+/* DARK SECTIONS: Permanent Deep Purple Gradient & Crisp White/Gold Typography */
 .sec-dark {
-  background: linear-gradient(145deg, #1f1147 0%, #351566 100%) !important;
+  background: linear-gradient(145deg, #180e38 0%, #2e1258 100%) !important;
   color: #ffffff !important;
-  position: relative;
 }
 
 .sec-dark h2,
 .sec-dark h3 {
   color: #ffffff !important;
+  font-weight: 700 !important;
 }
 
 .sec-dark .sub,
@@ -269,25 +387,31 @@ body::before {
   color: #ded6f7 !important;
 }
 
-/* Dark Section Elevated Glass Cards */
 .sec-dark .fact,
 .sec-dark .how,
 .sec-dark .feat,
 .sec-dark .calc,
 .sec-dark .panel-box {
   background: rgba(255, 255, 255, 0.08) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.18) !important;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.28) !important;
   color: #ffffff !important;
 }
 
 .sec-dark .fact strong {
-  color: var(--gold, #fbbf24) !important;
+  color: #fbbf24 !important;
+  font-weight: 700 !important;
 }
 
 .sec-dark .fact span {
+  color: #ffffff !important;
+}
+
+.sec-dark .how h3 {
+  color: #ffffff !important;
+}
+
+.sec-dark .how p {
   color: #ded6f7 !important;
 }
 
@@ -296,15 +420,12 @@ body::before {
 }
 
 .sec-dark .ticks i {
-  color: var(--gold, #fbbf24) !important;
+  color: #fbbf24 !important;
 }
 
 .sec-dark .benefits li {
   background: rgba(255, 255, 255, 0.08) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.18) !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25) !important;
 }
 
 .sec-dark .benefits h3 {
@@ -315,7 +436,7 @@ body::before {
   color: #ded6f7 !important;
 }
 
-/* Accordion in Dark Sections */
+/* Dark Section Accordions */
 .sec-dark .accordion {
   --bs-accordion-bg: transparent;
   --bs-accordion-border-color: rgba(255, 255, 255, 0.15);
@@ -330,11 +451,12 @@ body::before {
 .sec-dark .accordion-button {
   background: rgba(255, 255, 255, 0.08) !important;
   color: #ffffff !important;
+  font-weight: 600 !important;
 }
 
 .sec-dark .accordion-button:not(.collapsed) {
-  background: rgba(167, 139, 250, 0.22) !important;
-  color: var(--gold, #fbbf24) !important;
+  background: rgba(167, 139, 250, 0.25) !important;
+  color: #fbbf24 !important;
 }
 
 .sec-dark .accordion-button::after {
@@ -342,14 +464,40 @@ body::before {
 }
 
 .sec-dark .accordion-body {
-  background: rgba(15, 8, 35, 0.45) !important;
+  background: rgba(10, 4, 24, 0.5) !important;
+  color: #ded6f7 !important;
+}
+
+/* Panel Box in Loan View */
+.panel-box {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #ffffff !important;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.panel-box h3 {
+  color: #ffffff !important;
+}
+
+.panel-box-text {
+  color: #ded6f7 !important;
+  line-height: 1.6;
+}
+
+.panel-box ul {
+  color: #ded6f7 !important;
+}
+
+.panel-box li {
   color: #ded6f7 !important;
 }
 
 /* Deep Footer */
 .sec-dark-foot {
-  background: #120726 !important;
-  color: #b2a8d6 !important;
+  background: #110626 !important;
+  color: #c4b9e7 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
 
@@ -364,7 +512,7 @@ body::before {
 
 .sec-dark-foot a:hover,
 .sec-dark-foot li button:hover {
-  color: var(--gold, #fbbf24) !important;
+  color: #fbbf24 !important;
 }
 
 .sec-dark-foot hr {
@@ -376,66 +524,122 @@ body::before {
 }
 
 .sec-dark-foot .small {
-  color: #8c82b0 !important;
+  color: #9e93c6 !important;
+}
+
+/* CTA Box */
+.cta-in {
+  background: linear-gradient(135deg, #3b1a8c, #6d28d9) !important;
+  color: #ffffff !important;
+  border-radius: 22px;
+  padding: 36px;
+}
+
+.cta-in h2 {
+  color: #ffffff !important;
+}
+
+.cta-in p,
+.sec-light .cta-in p {
+  color: #f1edff !important;
+  font-weight: 500 !important;
+}
+
+/* Modals & Forms */
+.modal-content {
+  background-color: #ffffff !important;
+  color: #1b1038 !important;
+  border: 1px solid #e3dcf7 !important;
+}
+
+.modal-title {
+  color: #1b1038 !important;
+  font-weight: 700 !important;
+}
+
+.form-label {
+  color: #1b1038 !important;
+  font-weight: 600 !important;
+}
+
+.form-control,
+.form-select {
+  background-color: #ffffff !important;
+  color: #1b1038 !important;
+  border: 1.5px solid #d4cbeb !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #6d28d9 !important;
+  box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.15) !important;
 }
 
 /* --------------------------------------------------------------------------
    6. RESPONSIVE MEDIA QUERIES (Mobile & Tablet Refinements)
    -------------------------------------------------------------------------- */
-
 @media (max-width: 991px) {
-  /* Disable 3D tilt overflow projection on touch screens */
   .tilt {
     transform: none !important;
     transform-style: flat !important;
   }
+
   .ico3d {
     transform: none !important;
   }
 
-  /* Fixed nav mobile collapse styling */
   .qf-nav .navbar-collapse {
-    background: var(--surface, #ffffff);
-    padding: 16px;
-    border-radius: 14px;
-    margin-top: 10px;
-    border: 1px solid var(--line, #e3dcf7);
-    box-shadow: 0 14px 30px rgba(40, 15, 100, 0.18);
+    background: #ffffff !important;
+    padding: 18px 20px !important;
+    border-radius: 14px !important;
+    margin-top: 12px !important;
+    border: 1.5px solid #e7e0f5 !important;
+    box-shadow: 0 14px 30px rgba(40, 15, 100, 0.15) !important;
   }
 
-  .hero {
-    padding: 36px 0 32px;
-  }
-
-  .hero-carousel {
-    min-height: 280px;
-    max-height: 360px;
-  }
-
-  .slide-badge {
-    padding: 8px 12px;
+  #menu {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 8px;
+    width: 100%;
   }
 
-  .badge-icon {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
+  .qf-nav .nav-link {
+    width: 100%;
+    padding: 10px 14px !important;
   }
 
-  .badge-text strong {
-    font-size: 12.5px;
+  .dropdown-menu {
+    position: static !important;
+    box-shadow: none !important;
+    border: 1px solid #ede9fe !important;
+    background: #fbf9ff !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    margin-top: 6px !important;
   }
 
-  .badge-text span {
-    font-size: 11px;
+  .auth-nav {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #eee8fa;
+    width: 100%;
+  }
+
+  .auth-nav > * {
+    flex: 1 1 120px;
+    text-align: center;
   }
 }
 
 @media (max-width: 575px) {
   body {
-    padding-top: 72px !important;
+    padding-top: 74px !important;
     padding-bottom: 72px !important;
+  }
+
+  .qf-nav .container-fluid {
+    padding: 0 16px !important;
   }
 
   h1 {
@@ -450,11 +654,6 @@ body::before {
     font-size: 16px;
   }
 
-  .hero-carousel {
-    min-height: 240px;
-    border-radius: 18px;
-  }
-
   .floating-call-btn {
     bottom: 74px;
     right: 14px;
@@ -463,7 +662,7 @@ body::before {
   }
 
   .cta-in {
-    padding: 24px;
+    padding: 24px 20px;
     text-align: center;
     justify-content: center;
   }
@@ -474,38 +673,5 @@ body::before {
 
   .auth-form {
     padding: 20px 16px;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   7. DARK MODE COMPATIBILITY
-   -------------------------------------------------------------------------- */
-:root[data-theme="dark"] .qf-nav,
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .qf-nav {
-    background: rgba(26, 18, 56, 0.95) !important;
-    border-bottom-color: var(--line, #2e2358) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45) !important;
-  }
-
-  :root:not([data-theme="light"]) .sticky-bottom-bar {
-    background: rgba(26, 18, 56, 0.95);
-    border-top-color: var(--line, #2e2358);
-    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.5);
-  }
-
-  :root:not([data-theme="light"]) .bottom-tab {
-    color: var(--muted, #b2a8d6);
-  }
-
-  :root:not([data-theme="light"]) .bottom-tab:hover,
-  :root:not([data-theme="light"]) .bottom-tab.active {
-    color: #c4b5fd;
-    background: rgba(167, 139, 250, 0.15);
-  }
-
-  :root:not([data-theme="light"]) .qf-nav .navbar-collapse {
-    background: #1a1238;
-    border-color: var(--line, #2e2358);
   }
 }

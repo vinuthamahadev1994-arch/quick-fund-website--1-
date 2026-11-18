@@ -1,12 +1,13 @@
 :root {
-    --bg: #f6f3ff;
-    --surface: #fff;
+    color-scheme: light !important;
+    --bg: #f8f6fc;
+    --surface: #ffffff;
     --ink: #1b1038;
-    --muted: #5b5575;
+    --muted: #4c4465;
     --line: #e3dcf7;
     --primary: #6d28d9;
     --deep: #4c1d95;
-    --primary-ink: #fff;
+    --primary-ink: #ffffff;
     --soft: #ede9fe;
     --sec-g: #fff4d6;
     --sec-p: #ece5ff;
@@ -16,38 +17,6 @@
     box-sizing: border-box;
     padding-top: env(safe-area-inset-top, 0px);
     padding-bottom: env(safe-area-inset-bottom, 0px)
-}
-
-@media (prefers-color-scheme:dark) {
-    :root:not([data-theme="light"]) {
-        color-scheme: dark;
-        --bg: #0f0a24;
-        --surface: #1a1238;
-        --ink: #efeaff;
-        --muted: #b2a8d6;
-        --line: #2e2358;
-        --primary: #a78bfa;
-        --deep: #7c3aed;
-        --primary-ink: #1a0f3d;
-        --soft: #261a52;
-        --sec-g: #2a2310;
-        --sec-p: #221a4a
-    }
-}
-
-:root[data-theme="dark"] {
-    color-scheme: dark;
-    --bg: #0f0a24;
-    --surface: #1a1238;
-    --ink: #efeaff;
-    --muted: #b2a8d6;
-    --line: #2e2358;
-    --primary: #a78bfa;
-    --deep: #7c3aed;
-    --primary-ink: #1a0f3d;
-    --soft: #261a52;
-    --sec-g: #2a2310;
-    --sec-p: #221a4a
 }
 
 html {
@@ -66,8 +35,8 @@ body {
     color: var(--ink);
     font: 400 17px/1.6 "Source Sans 3", system-ui, sans-serif;
     overflow-x: hidden;
-    padding-top: 76px;
-    padding-bottom: 70px;
+    padding-top: 80px;
+    padding-bottom: 74px;
 }
 
 h1,
@@ -117,7 +86,7 @@ a {
     max-width: 52ch
 }
 
-/* nav */
+/* Spacious, Neatly Arranged Navbar */
 .qf-nav {
     position: fixed;
     top: 0;
@@ -125,57 +94,122 @@ a {
     right: 0;
     width: 100%;
     z-index: 1050;
-    background: var(--surface);
-    border-bottom: 1px solid var(--line);
+    background: #ffffff !important;
+    border-bottom: 1.5px solid #e7e0f5 !important;
+    box-shadow: 0 4px 20px rgba(40, 15, 100, 0.06) !important;
+    padding: 12px 0 !important;
+}
+
+.qf-nav .container-fluid {
+    max-width: 1440px;
+    padding: 0 28px !important;
+    display: flex;
+    align-items: center;
 }
 
 .navbar-brand {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    font: 700 23px Sora, sans-serif;
-    color: var(--ink);
+    gap: 12px;
+    font: 700 24px Sora, sans-serif;
+    color: #1b1038 !important;
     text-decoration: none;
+    margin-right: 2.2rem !important;
+    flex-shrink: 0;
 }
 
 .navbar-brand .b2 {
     color: var(--primary);
 }
 
-.navbar-brand svg,
-.navbar-brand img,
 .brand-logo-img {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
     border-radius: 10px;
     flex: none;
 }
 
+#menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 !important;
+    padding: 0;
+}
+
 .qf-nav .nav-link {
-    color: var(--muted);
+    color: #2e2646 !important;
     font-weight: 600;
+    font-size: 15.5px;
     background: none;
     border: 0;
-    padding: .6rem .9rem
+    padding: 9px 18px !important;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.18s ease;
+}
+
+.qf-nav .nav-link i {
+    color: var(--primary);
 }
 
 .qf-nav .nav-link:hover,
-.qf-nav .show>.nav-link {
-    color: var(--primary)
+.qf-nav .show > .nav-link {
+    color: var(--primary) !important;
+    background: #f1edfc;
 }
 
 .navbar-toggler {
     border: 1px solid var(--line);
-    color: var(--ink)
+    color: var(--ink);
+    padding: 10px 12px;
 }
 
+/* Home Loan Dropdown - Sized to Keep Everything Inside the Box */
 .dropdown-menu {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 8px;
-    box-shadow: 0 16px 34px rgba(40, 15, 100, .22)
+    min-width: 270px !important;
+    width: max-content !important;
+    max-width: 95vw !important;
+    background: #ffffff !important;
+    border: 1.5px solid #dcd4f5 !important;
+    border-radius: 14px !important;
+    padding: 8px !important;
+    box-shadow: 0 16px 36px rgba(40, 15, 100, 0.16) !important;
+    box-sizing: border-box !important;
+}
+
+.dropdown-item {
+    color: #1b1038 !important;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 8px !important;
+    padding: 10px 16px !important;
+    white-space: nowrap !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.15s ease;
+}
+
+.dropdown-item i {
+    color: var(--primary);
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.dropdown-item:hover,
+.dropdown-item.active {
+    background: var(--primary) !important;
+    color: #ffffff !important;
+}
+
+.dropdown-item:hover i,
+.dropdown-item.active i {
+    color: #ffffff !important;
 }
 
 .dropdown-item {
@@ -493,10 +527,10 @@ a {
 }
 
 .cta-in p {
-    color: #000000 !important;
+    color: #f1edff !important;
     margin: 6px 0 0;
     opacity: 1;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 /* calculator */
@@ -666,6 +700,16 @@ a {
     border-radius: 16px;
     padding: 24px;
     height: 100%
+}
+
+.panel-box h3 {
+    color: var(--ink);
+    margin-top: 0;
+}
+
+.panel-box-text {
+    color: var(--muted);
+    line-height: 1.6;
 }
 
 .panel-box ul {
@@ -927,48 +971,35 @@ a {
     background: var(--surface)
 }
 
-/* header: logo at far left */
-.qf-nav .container-fluid {
-    max-width: 1600px
-}
-
-.navbar-brand svg,
-.navbar-brand img,
-.brand-logo-img {
-    width: 42px;
-    height: 42px;
-    object-fit: contain;
-    border-radius: 11px;
-}
-
-.navbar-brand {
-    font-size: 25px
-}
-
 .auth-nav {
     display: flex;
-    gap: 12px;
+    gap: 16px;
     align-items: center;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    margin-left: auto;
 }
 
 .auth-nav .login {
     font-weight: 600;
     color: var(--ink);
     text-decoration: none;
-    padding: 8px 14px;
-    border: 2px solid var(--line);
+    padding: 9px 20px;
+    border: 1.5px solid var(--line);
     border-radius: 12px;
-    background: var(--surface)
+    background: var(--surface);
+    transition: all 0.18s ease;
 }
 
 .auth-nav .login:hover {
     border-color: var(--primary);
-    color: var(--primary)
+    color: var(--primary);
+    background: #fbf9ff;
 }
 
 .auth-nav .btn-3d {
-    padding: 9px 22px
+    padding: 10px 24px;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 @media(max-width:1199px) {

@@ -1,15 +1,15 @@
 /* ==========================================================================
-   QUICK FUND - HERO CAROUSEL CONTROLLER
+   QUICK FUND - FULL-SECTION HERO CAROUSEL CONTROLLER
    ========================================================================== */
 
 (function () {
   function initHeroCarousel() {
-    var wrapper = document.querySelector(".hero-carousel-wrapper");
+    var heroSection = document.getElementById("heroSection");
     var carousel = document.getElementById("heroCarousel");
     if (!carousel) return;
 
-    var slides = carousel.querySelectorAll(".hero-carousel-slide");
-    var indicators = document.querySelectorAll("#heroIndicators .indicator");
+    var slides = carousel.querySelectorAll(".hero-slide");
+    var indicators = document.querySelectorAll("#heroIndicators .hero-ind");
     var prevBtn = document.getElementById("heroPrevBtn");
     var nextBtn = document.getElementById("heroNextBtn");
 
@@ -17,7 +17,7 @@
 
     var currentIndex = 0;
     var timer = null;
-    var INTERVAL = 4500; // 4.5 seconds per slide
+    var INTERVAL = 5000; // 5 seconds per slide
     var isPaused = false;
 
     function goToSlide(index) {
@@ -98,12 +98,12 @@
       });
     });
 
-    // Hover pause
-    if (wrapper) {
-      wrapper.addEventListener("mouseenter", function () {
+    // Hover pause on desktop
+    if (heroSection) {
+      heroSection.addEventListener("mouseenter", function () {
         isPaused = true;
       });
-      wrapper.addEventListener("mouseleave", function () {
+      heroSection.addEventListener("mouseleave", function () {
         isPaused = false;
       });
     }
@@ -113,7 +113,7 @@
     var touchStartY = 0;
     var touchEndX = 0;
     var touchEndY = 0;
-    var minSwipeDistance = 40;
+    var minSwipeDistance = 45;
 
     carousel.addEventListener(
       "touchstart",
@@ -158,14 +158,16 @@
     }
 
     // Keyboard support
-    carousel.setAttribute("tabindex", "0");
-    carousel.addEventListener("keydown", function (e) {
-      if (e.key === "ArrowLeft") {
-        prevSlide();
-        startTimer();
-      } else if (e.key === "ArrowRight") {
-        nextSlide();
-        startTimer();
+    window.addEventListener("keydown", function (e) {
+      var homeView = document.getElementById("view-home");
+      if (homeView && !homeView.hidden) {
+        if (e.key === "ArrowLeft") {
+          prevSlide();
+          startTimer();
+        } else if (e.key === "ArrowRight") {
+          nextSlide();
+          startTimer();
+        }
       }
     });
 

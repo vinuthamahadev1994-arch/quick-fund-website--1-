@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Quick Fund – Compare loans from leading lenders</title>
+  <title>Quick Fund – Compare Business Loans & Home Loans</title>
   <meta name="description"
-    content="Compare home loan, loan against property, mortgage, personal, business, gold, car and education loan rates from leading lenders.">
+    content="Compare business loan, home loan, mortgage loan, and loan against property interest rates from India's leading lenders.">
   <link rel="icon" href="assets/favicon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap"
     rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
@@ -17,14 +17,15 @@
 </head>
 
 <body>
+  <!-- Fixed Top Navbar with Generous Spacing -->
   <nav class="navbar navbar-expand-xl qf-nav fixed-top" aria-label="Main">
-    <div class="container-fluid px-3 px-xl-5">
-      <a class="navbar-brand me-xl-4" href="#home">
-        <span data-logo><img src="assets/logo.png" alt="Quick Fund Logo" class="brand-logo-img" width="38" height="38"></span>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#home">
+        <span data-logo><img src="assets/logo.png" alt="Quick Fund Logo" class="brand-logo-img" width="40" height="40"></span>
         <span class="wm">Quick<span class="b2">Fund</span></span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav"
-        aria-expanded="false" aria-label="Toggle menu"><span class="tg"></span></button>
+        aria-expanded="false" aria-label="Toggle navigation"><span class="tg"></span></button>
       <div class="collapse navbar-collapse" id="nav">
         <ul class="navbar-nav me-auto" id="menu"></ul>
         <div class="auth-nav" id="authNav"></div>
@@ -32,240 +33,241 @@
     </div>
   </nav>
 
+  <!-- HOME VIEW -->
   <main id="view-home">
-    <!-- SECTION 1: HERO (LIGHT) -->
-    <section class="hero sec-light">
-      <div class="container">
-        <div class="row align-items-center g-4 g-lg-5">
-          <div class="col-lg-6">
-            <span class="eyebrow"><i class="fa-solid fa-shield-halved"></i> Free to use. No obligation.</span>
-            <h1>Find the right loan from lenders you already trust</h1>
-            <p class="lead">Quick Fund brings home, property, personal, business, gold, car and education loans
-              together. Learn how each loan works, see what you may need, then compare lenders and their rates in one
-              tap.</p>
-            <div class="d-flex flex-wrap gap-3 mt-4">
-              <a class="btn btn-3d" href="#loans">Explore loans</a>
-              <a class="btn btn-3d btn-alt" href="#calculator">Calculate EMI</a>
+    <!-- SECTION 1: FULL-SECTION HERO CAROUSEL (DIRECT ON PICTURE, NO PURPLE TINT, NO CONTAINER) -->
+    <section class="hero-full-section" id="heroSection">
+      <div class="hero-carousel-container" id="heroCarousel">
+        <!-- Slide 1: Business Loan -->
+        <div class="hero-slide active" data-slide="0">
+          <div class="hero-slide-bg" style="background-image: url('assets/hero-business-loan.jpg')"></div>
+          <div class="hero-slide-overlay"></div>
+          <div class="container hero-content-container">
+            <div class="hero-direct-content">
+              <span class="eyebrow"><i class="fa-solid fa-briefcase"></i> Working Capital & Expansion</span>
+              <h1 class="hero-title">Fuel your business growth with leading lenders</h1>
+              <p class="hero-lead">Fast collateral-free business loans, machinery financing and working capital limits from India's top banks and NBFCs.</p>
+              <div class="hero-highlights">
+                <span class="hl-chip"><i class="fa-solid fa-percent"></i> Rates from 9.00% p.a.</span>
+                <span class="hl-chip"><i class="fa-solid fa-bolt"></i> Fast Disbursals</span>
+                <span class="hl-chip"><i class="fa-solid fa-shield-halved"></i> 13+ Trusted Lenders</span>
+              </div>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a class="btn btn-3d" href="#business-loan">Explore business loans</a>
+                <a class="btn btn-3d btn-alt" href="#calculator">Calculate EMI</a>
+              </div>
+              <ul class="hero-ticks">
+                <li><i class="fa-solid fa-circle-check"></i> Minimal paperwork</li>
+                <li><i class="fa-solid fa-circle-check"></i> Collateral-free options</li>
+                <li><i class="fa-solid fa-circle-check"></i> 100% Data protected</li>
+              </ul>
             </div>
-            <ul class="ticks">
-              <li><i class="fa-solid fa-circle-check"></i> Leading lenders in one place</li>
-              <li><i class="fa-solid fa-circle-check"></i> Clear eligibility guidance</li>
-              <li><i class="fa-solid fa-circle-check"></i> Your details stay protected</li>
-            </ul>
           </div>
-          <div class="col-lg-6">
-            <div class="hero-carousel-wrapper">
-              <div class="hero-carousel" id="heroCarousel">
-                <!-- Slide 1: Home Loan -->
-                <div class="hero-carousel-slide active">
-                  <div class="slide-media">
-                    <img src="assets/hero-home-loan.jpg" alt="Home Loan Comparison" class="slide-img" loading="eager">
-                    <div class="slide-overlay"></div>
-                    <div class="slide-badge badge-top-left">
-                      <span class="badge-icon"><i class="fa-solid fa-house-chimney"></i></span>
-                      <div class="badge-text">
-                        <strong>Home Loans</strong>
-                        <span>Rates from 7.15% p.a.</span>
-                      </div>
-                    </div>
-                    <div class="slide-badge badge-bottom-right">
-                      <span class="badge-icon gold"><i class="fa-solid fa-bolt"></i></span>
-                      <div class="badge-text">
-                        <strong>Fast Approval</strong>
-                        <span>8+ Top Lenders</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Slide 2: Business Loan -->
-                <div class="hero-carousel-slide">
-                  <div class="slide-media">
-                    <img src="assets/hero-business-loan.jpg" alt="Business Growth Loan" class="slide-img" loading="lazy">
-                    <div class="slide-overlay"></div>
-                    <div class="slide-badge badge-top-left">
-                      <span class="badge-icon"><i class="fa-solid fa-briefcase"></i></span>
-                      <div class="badge-text">
-                        <strong>Business Loans</strong>
-                        <span>Collateral-Free Options</span>
-                      </div>
-                    </div>
-                    <div class="slide-badge badge-bottom-right">
-                      <span class="badge-icon gold"><i class="fa-solid fa-chart-line"></i></span>
-                      <div class="badge-text">
-                        <strong>Grow Your Venture</strong>
-                        <span>Flexible Working Capital</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Slide 3: Personal & Education Loan -->
-                <div class="hero-carousel-slide">
-                  <div class="slide-media">
-                    <img src="assets/hero-personal-loan.jpg" alt="Personal & Education Loans" class="slide-img" loading="lazy">
-                    <div class="slide-overlay"></div>
-                    <div class="slide-badge badge-top-left">
-                      <span class="badge-icon"><i class="fa-solid fa-graduation-cap"></i></span>
-                      <div class="badge-text">
-                        <strong>Education & Personal</strong>
-                        <span>Minimal Paperwork</span>
-                      </div>
-                    </div>
-                    <div class="slide-badge badge-bottom-right">
-                      <span class="badge-icon gold"><i class="fa-solid fa-shield-halved"></i></span>
-                      <div class="badge-text">
-                        <strong>100% Transparent</strong>
-                        <span>Zero Hidden Fees</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Slide 4: Car Loan & Gold Loan -->
-                <div class="hero-carousel-slide">
-                  <div class="slide-media">
-                    <img src="assets/hero-car-loan.jpg" alt="Car & Gold Loans" class="slide-img" loading="lazy">
-                    <div class="slide-overlay"></div>
-                    <div class="slide-badge badge-top-left">
-                      <span class="badge-icon"><i class="fa-solid fa-car"></i></span>
-                      <div class="badge-text">
-                        <strong>Vehicle & Gold Loans</strong>
-                        <span>Up to 90% Financing</span>
-                      </div>
-                    </div>
-                    <div class="slide-badge badge-bottom-right">
-                      <span class="badge-icon gold"><i class="fa-solid fa-coins"></i></span>
-                      <div class="badge-text">
-                        <strong>Instant Disbursal</strong>
-                        <span>Doorstep Gold Valuation</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        </div>
+
+        <!-- Slide 2: Home Loan -->
+        <div class="hero-slide" data-slide="1">
+          <div class="hero-slide-bg" style="background-image: url('assets/hero-home-loan.jpg')"></div>
+          <div class="hero-slide-overlay"></div>
+          <div class="container hero-content-container">
+            <div class="hero-direct-content">
+              <span class="eyebrow"><i class="fa-solid fa-house-chimney"></i> Low Interest Rates</span>
+              <h1 class="hero-title">Step into your dream home with confidence</h1>
+              <p class="hero-lead">Compare lowest home loan interest rates, calculate affordable EMIs, and get personalized advice from leading home finance lenders.</p>
+              <div class="hero-highlights">
+                <span class="hl-chip"><i class="fa-solid fa-percent"></i> Rates from 7.15% p.a.</span>
+                <span class="hl-chip"><i class="fa-solid fa-calendar"></i> Up to 30 Yrs Tenure</span>
+                <span class="hl-chip"><i class="fa-solid fa-building-columns"></i> 8+ Top Housing Lenders</span>
               </div>
-              <!-- Carousel Controls -->
-              <button class="carousel-btn prev-btn" id="heroPrevBtn" aria-label="Previous Slide">
-                <i class="fa-solid fa-chevron-left"></i>
-              </button>
-              <button class="carousel-btn next-btn" id="heroNextBtn" aria-label="Next Slide">
-                <i class="fa-solid fa-chevron-right"></i>
-              </button>
-              <!-- Indicators -->
-              <div class="carousel-indicators" id="heroIndicators">
-                <button class="indicator active" data-slide="0" aria-label="Slide 1"></button>
-                <button class="indicator" data-slide="1" aria-label="Slide 2"></button>
-                <button class="indicator" data-slide="2" aria-label="Slide 3"></button>
-                <button class="indicator" data-slide="3" aria-label="Slide 4"></button>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a class="btn btn-3d" href="#home-loan">Compare home loans</a>
+                <a class="btn btn-3d btn-alt" href="#calculator">Calculate EMI</a>
               </div>
+              <ul class="hero-ticks">
+                <li><i class="fa-solid fa-circle-check"></i> Instant eligibility check</li>
+                <li><i class="fa-solid fa-circle-check"></i> Zero hidden charges</li>
+                <li><i class="fa-solid fa-circle-check"></i> Doorstep documentation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Mortgage Loan -->
+        <div class="hero-slide" data-slide="2">
+          <div class="hero-slide-bg" style="background-image: url('assets/carousel-mortgage.jpg')"></div>
+          <div class="hero-slide-overlay"></div>
+          <div class="container hero-content-container">
+            <div class="hero-direct-content">
+              <span class="eyebrow"><i class="fa-solid fa-file-contract"></i> High-Value Funding</span>
+              <h1 class="hero-title">Unlock high capital with property mortgage loans</h1>
+              <p class="hero-lead">Leverage your residential or commercial property to secure large funds for expansion, high-value expenditures, or debt consolidation.</p>
+              <div class="hero-highlights">
+                <span class="hl-chip"><i class="fa-solid fa-percent"></i> Rates from 8.75% p.a.</span>
+                <span class="hl-chip"><i class="fa-solid fa-coins"></i> High Loan Amounts</span>
+                <span class="hl-chip"><i class="fa-solid fa-clock"></i> Up to 20 Yrs Tenure</span>
+              </div>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a class="btn btn-3d" href="#mortgage-loan">View mortgage rates</a>
+                <a class="btn btn-3d btn-alt" href="#calculator">Calculate EMI</a>
+              </div>
+              <ul class="hero-ticks">
+                <li><i class="fa-solid fa-circle-check"></i> Continue owning your property</li>
+                <li><i class="fa-solid fa-circle-check"></i> Lower EMI with long tenure</li>
+                <li><i class="fa-solid fa-circle-check"></i> Quick valuation & sanction</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4: Loan Against Property -->
+        <div class="hero-slide" data-slide="3">
+          <div class="hero-slide-bg" style="background-image: url('assets/carousel-property.jpg')"></div>
+          <div class="hero-slide-overlay"></div>
+          <div class="container hero-content-container">
+            <div class="hero-direct-content">
+              <span class="eyebrow"><i class="fa-solid fa-landmark"></i> Commercial & Residential</span>
+              <h1 class="hero-title">Loan against property at attractive interest rates</h1>
+              <p class="hero-lead">Monetize your property's value without selling it. Enjoy high funding limits, flexible repayment schedules, and simple processing.</p>
+              <div class="hero-highlights">
+                <span class="hl-chip"><i class="fa-solid fa-percent"></i> Rates from 8.75% p.a.</span>
+                <span class="hl-chip"><i class="fa-solid fa-chart-line"></i> Up to 70% Property Value</span>
+                <span class="hl-chip"><i class="fa-solid fa-handshake"></i> Top National Lenders</span>
+              </div>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a class="btn btn-3d" href="#loan-against-property">Explore loan against property</a>
+                <a class="btn btn-3d btn-alt" href="#calculator">Calculate EMI</a>
+              </div>
+              <ul class="hero-ticks">
+                <li><i class="fa-solid fa-circle-check"></i> For salaried & business owners</li>
+                <li><i class="fa-solid fa-circle-check"></i> Transparent fee structure</li>
+                <li><i class="fa-solid fa-circle-check"></i> End-to-end advisor support</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Carousel Navigation Controls -->
+      <button class="hero-nav-btn hero-prev-btn" id="heroPrevBtn" aria-label="Previous Slide">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button class="hero-nav-btn hero-next-btn" id="heroNextBtn" aria-label="Next Slide">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+      <!-- Carousel Indicators -->
+      <div class="hero-indicators" id="heroIndicators">
+        <button class="hero-ind active" data-slide="0" aria-label="Slide 1: Business Loans"><span>Business</span></button>
+        <button class="hero-ind" data-slide="1" aria-label="Slide 2: Home Loans"><span>Home</span></button>
+        <button class="hero-ind" data-slide="2" aria-label="Slide 3: Mortgage Loans"><span>Mortgage</span></button>
+        <button class="hero-ind" data-slide="3" aria-label="Slide 4: Loan Against Property"><span>Property</span></button>
+      </div>
     </section>
 
-    <!-- SECTION 2: FACTS (DARK) -->
+    <!-- SECTION 2: FACTS (PERMANENT DARK SECTION) -->
     <section class="facts sec-dark">
       <div class="container">
         <div class="row g-3 text-center" id="facts"></div>
       </div>
     </section>
 
-    <!-- SECTION 3: LOANS (LIGHT) -->
+    <!-- SECTION 3: LOANS (PERMANENT LIGHT SECTION) -->
     <section class="py-section sec-light" id="loans">
       <div class="container">
-        <h2>Loans for every need</h2>
-        <p class="sub">Pick a loan to read how it works and see the lenders who offer it, with their interest rates.</p>
+        <h2>Specialized loans for your goals</h2>
+        <p class="sub">Select a loan to view how it works, examine lender interest rate cards, and apply with ease.</p>
         <div class="row g-4" id="cards"></div>
       </div>
     </section>
 
-    <!-- SECTION 4: HOW IT WORKS (DARK) -->
+    <!-- SECTION 4: HOW IT WORKS (PERMANENT DARK SECTION) -->
     <section class="py-section sec-dark" id="how-it-works">
       <div class="container">
         <h2>How Quick Fund works</h2>
-        <p class="sub">Four simple steps from idea to application.</p>
+        <p class="sub">Four straightforward steps from comparison to loan disbursal.</p>
         <div class="row g-4">
           <div class="col-md-6 col-lg-3">
             <div class="how tilt"><span class="num">1</span>
-              <h3>Pick your loan</h3>
-              <p>Choose the loan that matches your goal, such as a home, business or education.</p>
+              <h3>Select your loan</h3>
+              <p>Choose between Business loans, Home loans, Mortgage loans, or Loan against property.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-3">
             <div class="how tilt"><span class="num">2</span>
               <h3>Compare lenders</h3>
-              <p>See each lender’s starting rate, typical range and charges side by side.</p>
+              <p>Review starting interest rates, loan tenure, and processing fees side-by-side.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-3">
             <div class="how tilt"><span class="num">3</span>
-              <h3>Share your details</h3>
-              <p>Tell us what you need. We only ask for what is useful to match you.</p>
+              <h3>Share basic details</h3>
+              <p>Tell us what loan amount you require. We protect your privacy at all stages.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-3">
             <div class="how tilt"><span class="num">4</span>
-              <h3>Get guided to apply</h3>
-              <p>An advisor calls you, explains the process and helps with documents.</p>
+              <h3>Get expert guidance</h3>
+              <p>A certified loan advisor contacts you to assist with paperwork and approvals.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 5: FEATURES (LIGHT) -->
+    <!-- SECTION 5: FEATURES (PERMANENT LIGHT SECTION) -->
     <section class="py-section sec-light" id="features">
       <div class="container">
-        <h2>Features</h2>
-        <p class="sub">Everything you need to compare and choose a loan, in one place.</p>
+        <h2>Why choose Quick Fund</h2>
+        <p class="sub">Everything you need to secure the most competitive loan terms in India.</p>
         <div class="row g-4 alt-ico">
           <div class="col-md-6 col-lg-4">
             <div class="feat tilt"><span class="ico3d"><i class="fa-solid fa-scale-balanced"></i></span>
               <h3>Side-by-side rates</h3>
-              <p>Starting rate, typical range, tenure and processing fee shown in the same clear format for every
-                lender.</p>
+              <p>Starting rates, tenure limits, and processing charges displayed in a transparent format for each lender.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
             <div class="feat tilt"><span class="ico3d"><i class="fa-solid fa-calculator"></i></span>
-              <h3>Built-in EMI calculator</h3>
-              <p>Try different amounts, rates and tenures to see your monthly instalment and total interest.</p>
+              <h3>Live EMI calculator</h3>
+              <p>Adjust loan amounts, rates, and repayment tenures to visualize your monthly instalments instantly.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
             <div class="feat tilt"><span class="ico3d"><i class="fa-solid fa-clipboard-check"></i></span>
               <h3>Eligibility guidance</h3>
-              <p>Know who can apply and what each loan expects before you spend time on forms.</p>
+              <p>Clear criteria for salaried professionals, self-employed individuals, and business owners.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
             <div class="feat tilt"><span class="ico3d"><i class="fa-solid fa-folder-open"></i></span>
-              <h3>Document checklists</h3>
-              <p>A simple list of papers to keep ready for salaried, self-employed and property loans.</p>
+              <h3>Document checklist</h3>
+              <p>Know exact KYC, income, and property documentation needed before beginning paperwork.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
             <div class="feat tilt"><span class="ico3d"><i class="fa-solid fa-headset"></i></span>
-              <h3>Call-back support</h3>
-              <p>Ask for a call and an advisor will explain your options and help you apply.</p>
+              <h3>Advisor support</h3>
+              <p>Get unbiased telephone assistance from financial experts who represent your best interests.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
             <div class="feat tilt"><span class="ico3d"><i class="fa-solid fa-mobile-screen"></i></span>
-              <h3>Works on any device</h3>
-              <p>A fast, easy-to-read site on your phone, tablet or computer.</p>
+              <h3>Crisp responsive display</h3>
+              <p>Clear, high-contrast permanent text across all phones, tablets, and computers.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 6: BENEFITS (DARK) -->
+    <!-- SECTION 6: BENEFITS (PERMANENT DARK SECTION) -->
     <section class="py-section sec-dark" id="benefits">
       <div class="container">
         <div class="row g-5 align-items-center">
           <div class="col-lg-5">
             <div class="benefit-hero">
               <h2>Benefits for you</h2>
-              <p>Borrow with more clarity and less running around.</p>
+              <p>Secure the lowest interest rate and save thousands of rupees over your loan tenure.</p>
               <a class="btn btn-3d btn-alt" href="#register">Create a free account</a>
             </div>
           </div>
@@ -273,32 +275,32 @@
             <ul class="benefits">
               <li><span class="bi"><i class="fa-solid fa-clock"></i></span>
                 <div>
-                  <h3>Save time</h3>
-                  <p>No need to visit many websites or branches to see who offers what.</p>
+                  <h3>Save valuable time</h3>
+                  <p>Skip branch visits and lengthy phone trees by comparing top lenders online in one place.</p>
                 </div>
               </li>
               <li><span class="bi g"><i class="fa-solid fa-piggy-bank"></i></span>
                 <div>
-                  <h3>Save money</h3>
-                  <p>Spot the lowest starting rate and the charges that add to your cost.</p>
+                  <h3>Save money on interest</h3>
+                  <p>Spot the most competitive rate and lowest processing fees before committing.</p>
                 </div>
               </li>
               <li><span class="bi"><i class="fa-solid fa-lightbulb"></i></span>
                 <div>
-                  <h3>Decide with confidence</h3>
-                  <p>Understand eligibility, documents and EMI before you apply.</p>
+                  <h3>Decide with clarity</h3>
+                  <p>Understand your amortization schedule, total interest payable, and eligibility beforehand.</p>
                 </div>
               </li>
               <li><span class="bi g"><i class="fa-solid fa-hand-holding-heart"></i></span>
                 <div>
-                  <h3>No cost, no pressure</h3>
-                  <p>Comparing is free and you choose if and when to move ahead.</p>
+                  <h3>100% Free to use</h3>
+                  <p>Quick Fund charges zero fees for browsing, comparison, and advisor callbacks.</p>
                 </div>
               </li>
               <li><span class="bi"><i class="fa-solid fa-user-shield"></i></span>
                 <div>
-                  <h3>Your data stays protected</h3>
-                  <p>We contact you only with your consent and never sell your personal data.</p>
+                  <h3>Strict data protection</h3>
+                  <p>We contact you strictly upon your request and never sell or misuse your private data.</p>
                 </div>
               </li>
             </ul>
@@ -307,56 +309,54 @@
       </div>
     </section>
 
-    <!-- SECTION 7: PARTNERS (LIGHT) -->
+    <!-- SECTION 7: PARTNERS (PERMANENT LIGHT SECTION) -->
     <section class="py-section sec-light" id="partners">
       <div class="container">
         <h2>Our lending partners</h2>
-        <p class="sub">Rates and details from these lenders are listed on Quick Fund.</p>
+        <p class="sub">Compare verified interest rates and terms from India’s premier financial institutions.</p>
         <div class="partners" id="partnerList"></div>
       </div>
     </section>
 
-    <!-- SECTION 8: BEFORE YOU APPLY (DARK) -->
+    <!-- SECTION 8: BEFORE YOU APPLY (PERMANENT DARK SECTION) -->
     <section class="py-section sec-dark" id="guide">
       <div class="container">
         <div class="row g-5">
           <div class="col-lg-5">
             <h2>Before you apply</h2>
-            <p class="sub">A little preparation can speed up approval and help you get a better rate.</p>
+            <p class="sub">Essential tips to speed up your loan sanction and negotiate the lowest possible rate.</p>
             <ul class="ticks">
-              <li><i class="fa-solid fa-circle-check"></i> Check your credit score. 750 or above usually gets better
-                offers.</li>
-              <li><i class="fa-solid fa-circle-check"></i> Look at the total cost, including processing fee and
-                prepayment charges.</li>
-              <li><i class="fa-solid fa-circle-check"></i> Borrow only what you can comfortably repay each month.</li>
+              <li><i class="fa-solid fa-circle-check"></i> Check credit score (750+ secures the lowest rates).</li>
+              <li><i class="fa-solid fa-circle-check"></i> Review the total cost including processing and prepayment fees.</li>
+              <li><i class="fa-solid fa-circle-check"></i> Ensure proposed EMI does not exceed 50% of monthly income.</li>
             </ul>
           </div>
           <div class="col-lg-7">
             <div class="accordion" id="docs">
               <div class="accordion-item">
                 <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#d1" aria-expanded="true" aria-controls="d1">Salaried applicants</button></h3>
+                    data-bs-target="#d1" aria-expanded="true" aria-controls="d1">Salaried applicants (Home & Property Loans)</button></h3>
                 <div id="d1" class="accordion-collapse collapse show" data-bs-parent="#docs">
                   <div class="accordion-body">Identity and address proof (Aadhaar, PAN), last 3 months’ salary slips,
-                    last 6 months’ account statements, and Form 16 or recent ITR.</div>
+                    last 6 months’ salary account statements, and latest Form 16 / ITR returns.</div>
                 </div>
               </div>
               <div class="accordion-item">
                 <h3 class="accordion-header"><button class="accordion-button collapsed" type="button"
                     data-bs-toggle="collapse" data-bs-target="#d2" aria-expanded="false"
-                    aria-controls="d2">Self-employed and business owners</button></h3>
+                    aria-controls="d2">Business owners & self-employed (Business Loans)</button></h3>
                 <div id="d2" class="accordion-collapse collapse" data-bs-parent="#docs">
-                  <div class="accordion-body">Identity and address proof, business registration or GST certificate, last
-                    2 years’ ITR with financial statements, and 6 to 12 months’ account statements.</div>
+                  <div class="accordion-body">Identity and address proof, business registration (GST, MSME Udyam, COI), last
+                    2 to 3 years’ ITR with audited financials, and 6 to 12 months’ current account statements.</div>
                 </div>
               </div>
               <div class="accordion-item">
                 <h3 class="accordion-header"><button class="accordion-button collapsed" type="button"
                     data-bs-toggle="collapse" data-bs-target="#d3" aria-expanded="false"
-                    aria-controls="d3">Property-backed loans</button></h3>
+                    aria-controls="d3">Property-backed loans (Mortgage & Loan Against Property)</button></h3>
                 <div id="d3" class="accordion-collapse collapse" data-bs-parent="#docs">
-                  <div class="accordion-body">Property papers such as the sale deed, title documents, tax receipts and
-                    approved plan, along with your identity, income and account statements.</div>
+                  <div class="accordion-body">Registered title deed, chain of prior deeds, approved building plan, latest property
+                    tax receipts, and encumbrance certificate, along with income and KYC proofs.</div>
                 </div>
               </div>
             </div>
@@ -365,13 +365,13 @@
       </div>
     </section>
 
-    <!-- SECTION 9: EMI CALCULATOR (LIGHT) -->
+    <!-- SECTION 9: EMI CALCULATOR (PERMANENT LIGHT SECTION) -->
     <section class="py-section sec-light" id="calculator">
       <div class="container">
         <div class="row g-5 align-items-center">
           <div class="col-lg-5">
             <h2>EMI calculator</h2>
-            <p class="sub">Move the sliders to see your monthly instalment and the total interest you would pay.</p>
+            <p class="sub">Move the sliders below to calculate your exact monthly instalment, interest amount, and total loan cost.</p>
           </div>
           <div class="col-lg-7">
             <div class="calc tilt" aria-label="EMI calculator">
@@ -399,22 +399,22 @@
       </div>
     </section>
 
-    <!-- SECTION 10: FAQ (DARK) -->
+    <!-- SECTION 10: FAQ (PERMANENT DARK SECTION) -->
     <section class="py-section sec-dark" id="faq">
       <div class="container">
         <h2>Frequently asked questions</h2>
-        <p class="sub">Quick answers to common questions.</p>
+        <p class="sub">Answers to common borrower questions about loans, rates, and eligibility.</p>
         <div class="accordion" id="faqs"></div>
       </div>
     </section>
 
-    <!-- SECTION 11: CTA (LIGHT) -->
+    <!-- SECTION 11: CTA (PERMANENT VIBRANT SECTION) -->
     <section class="cta sec-light">
       <div class="container">
         <div class="cta-in">
           <div>
             <h2>Not sure which loan fits?</h2>
-            <p>Tell us what you need and an advisor will point you to the right lenders.</p>
+            <p>Tell us what you need and a certified advisor will point you to the best lenders.</p>
           </div>
           <button class="btn btn-3d btn-alt" type="button" data-apply>Get a call back</button>
         </div>
@@ -422,20 +422,22 @@
     </section>
   </main>
 
+  <!-- LOAN VIEW (DYNAMICALLY POPULATED) -->
   <main id="view-loan" hidden></main>
+
+  <!-- AUTH VIEW (LOGIN / REGISTER) -->
   <main id="view-auth" hidden></main>
 
-  <!-- SECTION 12: FOOTER (DARK) -->
+  <!-- SECTION 12: FOOTER (PERMANENT DEEP FOOTER) -->
   <footer class="qf-foot sec-dark-foot">
     <div class="container">
       <div class="row g-4">
         <div class="col-lg-4">
           <a class="navbar-brand" href="#home">
-            <span data-logo><img src="assets/logo.png" alt="Quick Fund Logo" class="brand-logo-img" width="38" height="38"></span>
+            <span data-logo><img src="assets/logo.png" alt="Quick Fund Logo" class="brand-logo-img" width="40" height="40"></span>
             <span class="wm">Quick<span class="b2">Fund</span></span>
           </a>
-          <p class="mt-3">Quick Fund helps you compare loans from leading lenders in one place, so you can choose the
-            rate and terms that suit you.</p>
+          <p class="mt-3">Quick Fund provides unbiased comparison of business loans and home loans from India's leading banks and financial institutions.</p>
           <p class="mb-1"><i class="fa-solid fa-envelope"></i> hello@quickfund.in</p>
           <p><i class="fa-solid fa-phone"></i> +91 00000 00000</p>
         </div>
@@ -443,18 +445,16 @@
           <h3>Home loans</h3>
           <ul>
             <li><a href="#home-loan">Home loan</a></li>
-            <li><a href="#loan-against-property">Loan against property</a></li>
             <li><a href="#mortgage-loan">Mortgage loan</a></li>
+            <li><a href="#loan-against-property">Loan against property</a></li>
           </ul>
         </div>
         <div class="col-6 col-lg-2">
-          <h3>Other loans</h3>
+          <h3>Business loans</h3>
           <ul>
-            <li><a href="#personal-loan">Personal loan</a></li>
             <li><a href="#business-loan">Business loan</a></li>
-            <li><a href="#gold-loan">Gold loan</a></li>
-            <li><a href="#car-loan">Car loan</a></li>
-            <li><a href="#education-loan">Education loan</a></li>
+            <li><a href="#calculator">EMI Calculator</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
           </ul>
         </div>
         <div class="col-6 col-lg-2">
@@ -480,11 +480,8 @@
         </div>
       </div>
       <hr>
-      <p class="small mb-1">Quick Fund is an online loan comparison service and does not lend money itself. Interest
-        rates and fees shown are indicative, vary by borrower profile and change without notice. Loans are subject to
-        the lender’s approval, terms and conditions.</p>
-      <p class="small mb-0">© <span id="yr"></span> Quick Fund. All rights reserved. Lender names belong to their
-        respective owners.</p>
+      <p class="small mb-1">Quick Fund is an online comparison portal and is not a direct lender. Indicative interest rates and fees vary by borrower profile and are subject to lender approval, terms, and conditions.</p>
+      <p class="small mb-0">© <span id="yr"></span> Quick Fund. All rights reserved. Lender names belong to their respective owners.</p>
     </div>
   </footer>
 
