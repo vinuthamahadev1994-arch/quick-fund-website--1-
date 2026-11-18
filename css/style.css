@@ -343,31 +343,57 @@ a {
 }
 
 .facts {
-    padding: 34px 0
+    padding: 44px 0 38px;
+    background: #ffffff;
 }
 
 .fact {
-    background: var(--surface);
-    border: 1px solid var(--line);
+    background: #ffffff;
+    border: 1.5px solid #ece7f8;
+    border-radius: 18px;
+    padding: 24px 18px;
+    box-shadow: 0 4px 6px -1px rgba(109, 40, 217, 0.04), 0 12px 28px -4px rgba(109, 40, 217, 0.08);
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+    height: 100%;
+}
+
+.fact:hover {
+    transform: translateY(-6px) scale(1.02);
+    border-color: #c4b5fd;
+    box-shadow: 0 18px 36px -6px rgba(109, 40, 217, 0.16);
+}
+
+.fact-ico {
+    display: inline-grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
     border-radius: 14px;
-    padding: 18px;
-    box-shadow: 0 2px 0 var(--line), 0 10px 20px rgba(50, 20, 120, .08)
+    background: #f1edfc;
+    color: var(--primary);
+    font-size: 19px;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 12px rgba(109, 40, 217, 0.12);
 }
 
 .fact strong {
     display: block;
-    font: 700 30px Sora, sans-serif;
-    color: var(--primary)
+    font: 700 32px Sora, sans-serif;
+    color: var(--primary);
+    line-height: 1.2;
+    margin-bottom: 2px;
 }
 
 .fact span {
-    color: var(--muted)
+    color: var(--muted);
+    font-size: 14.5px;
+    font-weight: 600;
 }
 
-/* 3D cards */
+/* 3D Elevated Cards */
 .tilt {
     transform-style: preserve-3d;
-    transition: transform .15s ease-out, box-shadow .15s
+    transition: transform .25s ease-out, box-shadow .25s ease-out;
 }
 
 .card3d,
@@ -375,79 +401,114 @@ a {
 .calc,
 .stat,
 .how,
-.feat {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    box-shadow: 0 2px 0 var(--line), 0 16px 30px rgba(50, 20, 120, .1)
+.feat,
+.panel-box {
+    background: #ffffff;
+    border: 1.5px solid #ece7f8;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px -1px rgba(109, 40, 217, 0.04), 0 12px 28px -4px rgba(109, 40, 217, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.card3d:hover,
+.how:hover,
+.feat:hover,
+.lender:hover,
+.panel-box:hover {
+    transform: translateY(-8px) scale(1.015);
+    border-color: #c4b5fd;
+    box-shadow: 0 20px 42px -6px rgba(109, 40, 217, 0.16), 0 8px 16px -4px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
 .card3d {
     display: block;
     height: 100%;
-    padding: 22px;
+    padding: 26px 22px;
     color: var(--ink);
-    text-decoration: none
+    text-decoration: none;
 }
 
 .card3d:hover {
-    border-color: var(--primary)
+    border-color: #a78bfa;
 }
 
 .ico3d {
     display: inline-grid;
     place-items: center;
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    background: var(--primary);
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
     color: var(--primary-ink);
     font-size: 22px;
-    box-shadow: 0 5px 0 var(--deep);
-    transform: translateZ(30px)
+    box-shadow: 0 6px 0 #3b1479, 0 12px 24px rgba(91, 33, 182, 0.35);
+    transform: translateZ(28px);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card3d:hover .ico3d,
+.feat:hover .ico3d {
+    transform: translateZ(34px) translateY(-3px);
+    box-shadow: 0 8px 0 #3b1479, 0 16px 28px rgba(91, 33, 182, 0.45);
 }
 
 .card3d h3,
 .lender h3,
 .how h3,
 .feat h3 {
-    margin: 16px 0 6px;
-    transform: translateZ(20px)
+    margin: 18px 0 8px;
+    font-weight: 700;
+    color: var(--ink);
+    transform: translateZ(20px);
 }
 
 .card3d p,
 .how p,
 .feat p {
     color: var(--muted);
-    font-size: 16px;
-    margin: 0 0 12px
+    font-size: 15.5px;
+    line-height: 1.55;
+    margin: 0 0 14px;
 }
 
 .go {
-    font: 700 14px Sora, sans-serif;
-    color: var(--primary)
+    font: 700 14.5px Sora, sans-serif;
+    color: var(--primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.card3d:hover .go {
+    transform: translateX(4px);
+    color: #4c1d95;
 }
 
 .how {
-    padding: 24px;
-    height: 100%
+    padding: 28px 24px;
+    height: 100%;
 }
 
 .num {
     display: inline-grid;
     place-items: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    background: var(--gold);
-    color: var(--gold-ink);
-    font: 700 18px Sora, sans-serif;
-    box-shadow: 0 4px 0 var(--gold-deep)
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #2b1a00;
+    font: 700 19px Sora, sans-serif;
+    box-shadow: 0 5px 0 #b45309, 0 10px 20px rgba(217, 119, 6, 0.3);
+    margin-bottom: 8px;
 }
 
 .feat {
-    padding: 24px;
-    height: 100%
+    padding: 28px 24px;
+    height: 100%;
+}
 }
 
 .feat>i {
@@ -871,10 +932,7 @@ a {
     background: radial-gradient(900px 440px at 90% -10%, #e0d3ff, transparent 70%), linear-gradient(180deg, var(--bg), var(--sec-p))
 }
 
-@media (prefers-color-scheme:dark) {
-    :root:not([data-theme="light"]) .hero {
-        background: radial-gradient(900px 440px at 90% -10%, #3a2a78, transparent 70%), linear-gradient(180deg, var(--bg), var(--sec-p))
-    }
+/* Permanent light scheme across all devices */
 }
 
 .fact {
@@ -1174,4 +1232,842 @@ a {
     height: 2px;
     background: var(--ink);
     box-shadow: 0 7px 0 var(--ink), 0 -7px 0 var(--ink)
+}
+
+/* ==========================================================================
+   QUICK FUND - ALTERNATE PURPLE & WHITE SECTIONS, 3D CARDS & FLOATING SHAPES
+   ========================================================================== */
+
+/* 1. Relative Section Container for Floating Shapes Boundary */
+.sec-relative {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* 2. ALTERNATING SECTION BACKGROUNDS (PURPLE & WHITE) */
+
+/* PURPLE SECTION (LOGO BRAND PURPLE) */
+.sec-purple {
+    background: linear-gradient(145deg, #180838 0%, #280d58 50%, #1a063b 100%) !important;
+    color: #ffffff !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sec-purple h1,
+.sec-purple h2,
+.sec-purple h3 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.sec-purple p {
+    color: #ded4fa !important;
+}
+
+.sec-purple .sub {
+    color: #ded4fa !important;
+    font-size: 17px;
+    line-height: 1.55;
+    margin-bottom: 32px;
+}
+
+.sec-purple li {
+    color: #ded4fa !important;
+}
+
+.sec-purple .ticks i {
+    color: #fbbf24 !important;
+}
+
+/* WHITE SECTION (CLEAN CRISP LIGHT) */
+.sec-white {
+    background: #ffffff !important;
+    color: #160d33 !important;
+    border-top: 1px solid #ebe5f7;
+    border-bottom: 1px solid #ebe5f7;
+}
+
+.sec-white h1,
+.sec-white h2,
+.sec-white h3 {
+    color: #160d33 !important;
+    font-weight: 700 !important;
+}
+
+.sec-white p {
+    color: #453c63 !important;
+}
+
+.sec-white .sub {
+    color: #554d72 !important;
+    font-size: 17px;
+    line-height: 1.55;
+    margin-bottom: 32px;
+}
+
+.sec-white li {
+    color: #453c63 !important;
+}
+
+.sec-white .ticks i {
+    color: #10b981 !important;
+}
+
+/* FOOTER IN LOGO COLOR */
+.sec-purple-foot {
+    background: #12052b !important;
+    color: #ded4fa !important;
+    border-top: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.sec-purple-foot h2,
+.sec-purple-foot h3 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+.sec-purple-foot .navbar-brand {
+    color: #ffffff !important;
+}
+
+.sec-purple-foot .b2 {
+    color: #fbbf24 !important;
+}
+
+.sec-purple-foot a,
+.sec-purple-foot li button {
+    color: #ded4fa !important;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.18s ease;
+}
+
+.sec-purple-foot a:hover,
+.sec-purple-foot li button:hover {
+    color: #fbbf24 !important;
+}
+
+.sec-purple-foot hr {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    opacity: 1;
+}
+
+.sec-purple-foot .small {
+    color: #9d93c4 !important;
+}
+
+/* Backward compatibility aliases */
+.sec-white-foot {
+    background: #12052b !important;
+    color: #ded4fa !important;
+}
+.sec-white-alt {
+    background: #f8f9fc !important;
+    color: #160d33 !important;
+}
+
+/* 3. Floating Moving Shapes in Empty Spaces */
+.floating-shapes {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.f-shape {
+    position: absolute;
+    pointer-events: none;
+    will-change: transform;
+}
+
+/* Floating Luminous Orbs */
+.f-orb {
+    border-radius: 50%;
+    filter: blur(44px);
+    opacity: 0.72;
+}
+
+.f-orb-purple {
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.35) 0%, rgba(109, 40, 217, 0.12) 60%, transparent 80%);
+}
+
+.f-orb-gold {
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.32) 0%, rgba(217, 119, 6, 0.1) 60%, transparent 80%);
+}
+
+/* Floating 3D Specular Rings */
+.f-ring {
+    border-radius: 50%;
+    border: 3.5px solid rgba(167, 139, 250, 0.45);
+    box-shadow: 0 10px 24px rgba(109, 40, 217, 0.2), inset 0 2px 8px rgba(255, 255, 255, 0.85);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 70%);
+}
+
+.f-ring-gold {
+    border-color: rgba(245, 158, 11, 0.5);
+    box-shadow: 0 10px 24px rgba(245, 158, 11, 0.22), inset 0 2px 8px rgba(255, 255, 255, 0.9);
+}
+
+/* Floating 3D Isometric Diamond Cubes */
+.f-cube {
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(196, 181, 253, 0.5) 0%, rgba(139, 92, 246, 0.2) 100%);
+    border: 1.5px solid rgba(167, 139, 250, 0.6);
+    box-shadow: 0 12px 24px rgba(109, 40, 217, 0.16);
+    transform: rotate(45deg);
+}
+
+.f-cube-gold {
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(253, 230, 138, 0.6) 0%, rgba(245, 158, 11, 0.22) 100%);
+    border: 1.5px solid rgba(251, 191, 36, 0.7);
+    box-shadow: 0 12px 24px rgba(217, 119, 6, 0.18);
+    transform: rotate(45deg);
+}
+
+/* Floating 3D Pill Capsule */
+.f-pill {
+    border-radius: 99px;
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.35), rgba(251, 191, 36, 0.25));
+    border: 1.5px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 10px 22px rgba(91, 33, 182, 0.14);
+}
+
+/* Keyframe Float Animations */
+.anim-sway-1 {
+    animation: floatSway1 7.5s ease-in-out infinite alternate;
+}
+
+.anim-sway-2 {
+    animation: floatSway2 9.5s ease-in-out infinite alternate;
+}
+
+.anim-spin-1 {
+    animation: floatSpin1 24s linear infinite;
+}
+
+.anim-pulse-1 {
+    animation: floatPulse1 6.5s ease-in-out infinite alternate;
+}
+
+@keyframes floatSway1 {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-22px) rotate(6deg); }
+}
+
+@keyframes floatSway2 {
+    0% { transform: translateY(0) rotate(45deg); }
+    100% { transform: translateY(-18px) rotate(39deg); }
+}
+
+@keyframes floatSpin1 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes floatPulse1 {
+    0% { transform: scale(0.92) translateY(0); opacity: 0.55; }
+    100% { transform: scale(1.08) translateY(-14px); opacity: 0.85; }
+}
+
+/* 4. 3D CARDS IN WHITE SECTIONS */
+.sec-white .card-3d,
+.sec-white .card3d,
+.sec-white .feat,
+.sec-white .calc,
+.sec-white .lender {
+    background: #ffffff !important;
+    border: 1.5px solid #eae5f7 !important;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px -4px rgba(45, 17, 95, 0.07),
+                0 4px 10px -2px rgba(45, 17, 95, 0.04),
+                0 0 0 1px rgba(109, 40, 217, 0.05);
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.28s ease !important;
+}
+
+.sec-white .card-3d:hover,
+.sec-white .card3d:hover,
+.sec-white .feat:hover,
+.sec-white .calc:hover,
+.sec-white .lender:hover {
+    transform: translateY(-8px) scale(1.01) !important;
+    box-shadow: 0 22px 42px -6px rgba(45, 17, 95, 0.14),
+                0 8px 18px -4px rgba(45, 17, 95, 0.08),
+                0 0 0 1.5px rgba(109, 40, 217, 0.18) !important;
+    border-color: #d8cff8 !important;
+}
+
+/* 3D Loan Cards (in White Section) */
+.card3d {
+    display: block;
+    text-decoration: none;
+    padding: 28px 24px;
+    height: 100%;
+}
+
+.card3d .ico3d {
+    display: inline-grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #7c3aed, #5b21b6);
+    color: #ffffff;
+    box-shadow: 0 5px 0 #3b137a, 0 8px 18px rgba(91, 33, 182, 0.28);
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.card3d h3 {
+    font-size: 20px;
+    color: #160d33 !important;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.card3d p {
+    color: #453c63 !important;
+    font-size: 14.5px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.card3d .go {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #6d28d9;
+    transition: transform 0.2s ease;
+}
+
+.card3d:hover .go {
+    transform: translateX(4px);
+    color: #4c1d95;
+}
+
+/* 3D Feature Cards (in White Section) */
+.feat {
+    padding: 28px 24px !important;
+}
+
+.feat .ico3d {
+    display: inline-grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #7c3aed, #5b21b6);
+    color: #ffffff;
+    box-shadow: 0 5px 0 #3b137a, 0 8px 18px rgba(91, 33, 182, 0.28);
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.feat h3 {
+    font-size: 19px;
+    color: #160d33 !important;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.feat p {
+    color: #453c63 !important;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* 3D Partner Badges (in White Section) */
+.partners span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    background: #ffffff !important;
+    border: 1.5px solid #eae5f7 !important;
+    border-radius: 14px;
+    font-weight: 700;
+    color: #160d33 !important;
+    font-size: 14.5px;
+    box-shadow: 0 4px 12px rgba(45, 17, 95, 0.04);
+    margin: 6px;
+    transition: all 0.2s ease;
+}
+
+.partners span:hover {
+    transform: translateY(-3px);
+    border-color: #6d28d9 !important;
+    color: #6d28d9 !important;
+    box-shadow: 0 8px 20px rgba(109, 40, 217, 0.15);
+}
+
+/* 3D Calculator Container (in White Section) */
+.calc {
+    background: #ffffff !important;
+    border: 1.5px solid #eae5f7 !important;
+    border-radius: 22px;
+    padding: 32px 28px !important;
+    box-shadow: 0 16px 36px rgba(45, 17, 95, 0.08), 0 0 0 1px rgba(109, 40, 217, 0.05);
+}
+
+.calc label {
+    color: #160d33 !important;
+    font-weight: 700;
+    font-size: 15.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    margin-top: 18px;
+}
+
+.calc output {
+    color: #6d28d9 !important;
+    font-family: Sora, system-ui, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.calc .emi {
+    margin-top: 28px;
+    background: linear-gradient(140deg, #3b1685, #6d28d9) !important;
+    color: #ffffff !important;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 12px 28px rgba(59, 22, 133, 0.3);
+}
+
+.calc .emi small {
+    color: #ded6f7 !important;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.calc .emi strong {
+    color: #fbbf24 !important;
+    font-size: clamp(30px, 4vw, 42px);
+    font-family: Sora, system-ui, sans-serif;
+    font-weight: 800;
+    display: block;
+    margin: 6px 0 16px;
+}
+
+.calc .emi dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 16px;
+    margin: 0;
+}
+
+.calc .emi dt {
+    color: #ded6f7 !important;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.calc .emi dd {
+    color: #ffffff !important;
+    font-family: Sora, system-ui, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 4px 0 0;
+}
+
+/* 3D CTA Section (in White Section) */
+.cta-in {
+    background: linear-gradient(135deg, #3b1685 0%, #6d28d9 60%, #4c1d95 100%) !important;
+    color: #ffffff !important;
+    border-radius: 24px;
+    padding: 44px 38px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    box-shadow: 0 20px 48px rgba(59, 22, 133, 0.32), 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.cta-in h2 {
+    color: #ffffff !important;
+    font-size: clamp(26px, 3.4vw, 36px);
+    margin: 0 0 8px;
+    font-weight: 700;
+}
+
+.cta-in p {
+    color: #ede9fe !important;
+    font-size: 16.5px;
+    margin: 0;
+}
+
+/* 5. 3D CARDS IN PURPLE SECTIONS (LOGO BRAND PURPLE) */
+
+/* Facts Section & fact-ico in Purple Color */
+.sec-purple .fact,
+.fact {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 26px 18px !important;
+    text-align: center;
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease !important;
+}
+
+.sec-purple .fact:hover,
+.fact:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    border-color: rgba(167, 139, 250, 0.65) !important;
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.45), 0 0 26px rgba(109, 40, 217, 0.4) !important;
+}
+
+/* fact-ico in Vivid Logo Purple with 3D Bevel */
+.sec-purple .fact-ico,
+.fact-ico {
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9) !important;
+    color: #ffffff !important;
+    border: 2px solid rgba(255, 255, 255, 0.35) !important;
+    box-shadow: 0 5px 0 #3b137a, 0 10px 22px rgba(109, 40, 217, 0.5) !important;
+    display: inline-grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    margin: 0 auto 14px;
+    font-size: 22px;
+    transition: transform 0.2s ease;
+}
+
+.sec-purple .fact:hover .fact-ico,
+.fact:hover .fact-ico {
+    transform: scale(1.1);
+}
+
+.sec-purple .fact strong,
+.fact strong {
+    display: block;
+    font-size: clamp(28px, 3.4vw, 38px);
+    font-family: Sora, system-ui, sans-serif;
+    font-weight: 800;
+    color: #fbbf24 !important;
+    line-height: 1.1;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+
+.sec-purple .fact span,
+.fact span {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff !important;
+    margin-top: 6px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* 3D Step Cards in How It Works (Purple Section) */
+.sec-purple .how,
+.how {
+    position: relative;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 34px 24px 28px !important;
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease !important;
+}
+
+.sec-purple .how:hover,
+.how:hover {
+    transform: translateY(-8px) scale(1.01) !important;
+    border-color: rgba(167, 139, 250, 0.65) !important;
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.45), 0 0 26px rgba(109, 40, 217, 0.4) !important;
+}
+
+.sec-purple .how .num,
+.how .num {
+    position: absolute;
+    top: -14px;
+    left: 24px;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b) !important;
+    color: #2b1a00 !important;
+    font-family: Sora, system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 3px 0 #b45309, 0 6px 14px rgba(217, 119, 6, 0.4) !important;
+}
+
+.sec-purple .how h3,
+.how h3 {
+    margin-top: 6px;
+    font-size: 19px;
+    color: #ffffff !important;
+    font-weight: 700;
+}
+
+.sec-purple .how p,
+.how p {
+    color: #ded4fa !important;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* 3D Benefits Cards (in Purple Section) */
+.sec-purple .benefit-hero {
+    background: linear-gradient(140deg, #250b57 0%, #4c1d95 60%, #3b1685 100%) !important;
+    color: #ffffff !important;
+    border-radius: 22px;
+    padding: 38px 32px !important;
+    box-shadow: 0 20px 42px rgba(0, 0, 0, 0.4) !important;
+    border: 1.5px solid rgba(251, 191, 36, 0.45) !important;
+}
+
+.sec-purple .benefit-hero h2 {
+    color: #ffffff !important;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.sec-purple .benefit-hero p {
+    color: #ded4fa !important;
+    font-size: 16px;
+    line-height: 1.55;
+    margin-bottom: 24px;
+}
+
+.sec-purple .benefits li {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: all 0.25s ease;
+}
+
+.sec-purple .benefits li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+    border-color: rgba(167, 139, 250, 0.6) !important;
+}
+
+.sec-purple .benefits li h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffffff !important;
+    margin-bottom: 4px;
+}
+
+.sec-purple .benefits li p {
+    font-size: 14.5px;
+    color: #ded4fa !important;
+    line-height: 1.45;
+    margin: 0;
+}
+
+.sec-purple .bi {
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 0 #4c1d95 !important;
+}
+
+.sec-purple .bi.g {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b) !important;
+    color: #2b1a00 !important;
+    box-shadow: 0 4px 0 #b45309 !important;
+}
+
+/* 3D Accordion in Purple Sections (FAQ and Guide) */
+.sec-purple .accordion-item {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 16px !important;
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    transition: all 0.25s ease;
+}
+
+.sec-purple .accordion-item:hover {
+    border-color: rgba(167, 139, 250, 0.6) !important;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.38);
+}
+
+.sec-purple .accordion-button {
+    background: rgba(255, 255, 255, 0.07) !important;
+    color: #ffffff !important;
+    font-family: Sora, system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 18px 22px;
+    box-shadow: none !important;
+}
+
+.sec-purple .accordion-button:not(.collapsed) {
+    background: rgba(109, 40, 217, 0.4) !important;
+    color: #fbbf24 !important;
+}
+
+.sec-purple .accordion-button::after {
+    filter: brightness(0) invert(1) !important;
+}
+
+.sec-purple .accordion-body {
+    background: rgba(14, 5, 30, 0.6) !important;
+    color: #ded4fa !important;
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 16px 22px 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 3D Guidance Panels in Purple Section (Loan Page) */
+.sec-purple .panel-box,
+.panel-box {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 20px;
+    padding: 26px !important;
+    color: #ffffff !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.32) !important;
+}
+
+.sec-purple .panel-box h3,
+.panel-box h3 {
+    color: #ffffff !important;
+}
+
+.sec-purple .panel-box p,
+.sec-purple .panel-box li,
+.sec-purple .panel-box-text,
+.panel-box p,
+.panel-box li,
+.panel-box-text {
+    color: #ded4fa !important;
+    line-height: 1.55;
+}
+
+/* 6. 3D BUTTONS */
+.btn-3d {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9) !important;
+    color: #ffffff !important;
+    border: 0 !important;
+    border-radius: 12px !important;
+    padding: 12px 24px !important;
+    font-family: Sora, system-ui, sans-serif;
+    font-weight: 700;
+    box-shadow: 0 4px 0 #4c1d95, 0 8px 20px rgba(109, 40, 217, 0.35) !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.btn-3d:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #4c1d95, 0 12px 24px rgba(109, 40, 217, 0.42) !important;
+    color: #ffffff !important;
+}
+
+.btn-3d:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #4c1d95, 0 4px 10px rgba(109, 40, 217, 0.25) !important;
+}
+
+.btn-3d-gold,
+.btn-alt {
+    background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+    color: #2b1a00 !important;
+    box-shadow: 0 4px 0 #b45309, 0 8px 20px rgba(217, 119, 6, 0.35) !important;
+}
+
+.btn-3d-gold:hover,
+.btn-alt:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #b45309, 0 12px 24px rgba(217, 119, 6, 0.45) !important;
+    color: #2b1a00 !important;
+}
+
+.btn-3d-gold:active,
+.btn-alt:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #b45309, 0 4px 10px rgba(217, 119, 6, 0.25) !important;
+}
+
+
+/* --- APPLIED USER DESIGN OVERRIDES --- */
+.pulse-ring {
+  display: none !important;
+}
+
+.floating-shapes,
+.f-shape,
+.f-orb,
+.f-ring,
+.f-cube,
+.f-pill {
+  display: none !important;
+}
+
+.fact-ico,
+.sec-purple .fact-ico {
+  display: none !important;
+}
+
+.sec-purple .fact,
+.fact {
+  background: #251249 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+  padding: 24px 14px !important;
+  min-height: 120px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.sec-purple .fact strong,
+.fact strong {
+  display: block !important;
+  font-family: Sora, system-ui, sans-serif !important;
+  font-size: clamp(28px, 4vw, 36px) !important;
+  font-weight: 800 !important;
+  color: #fbbf24 !important;
+  line-height: 1.15 !important;
+  margin-bottom: 6px !important;
+}
+
+.sec-purple .fact span,
+.fact span {
+  display: block !important;
+  font-size: 14.5px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  line-height: 1.3 !important;
 }

@@ -180,16 +180,16 @@
      -------------------------------------------------------------------------- */
   var menuHtml =
     '<li class="nav-item">' +
-      '<a class="nav-link" href="#business-loan"><i class="fa-solid fa-briefcase"></i> Business Loan</a>' +
+      '<a class="nav-link" href="business-loan.html"><i class="fa-solid fa-briefcase"></i> Business Loan</a>' +
     '</li>' +
     '<li class="nav-item dropdown">' +
       '<button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">' +
         '<i class="fa-solid fa-house"></i> Home Loans' +
       '</button>' +
       '<ul class="dropdown-menu">' +
-        '<li><a class="dropdown-item" href="#home-loan"><i class="fa-solid fa-house"></i> Home Loan</a></li>' +
-        '<li><a class="dropdown-item" href="#mortgage-loan"><i class="fa-solid fa-file-contract"></i> Mortgage Loan</a></li>' +
-        '<li><a class="dropdown-item" href="#loan-against-property"><i class="fa-solid fa-landmark"></i> Loan Against Property</a></li>' +
+        '<li><a class="dropdown-item" href="home-loan.html"><i class="fa-solid fa-house"></i> Home Loan</a></li>' +
+        '<li><a class="dropdown-item" href="mortgage-loan.html"><i class="fa-solid fa-file-contract"></i> Mortgage Loan</a></li>' +
+        '<li><a class="dropdown-item" href="loan-against-property.html"><i class="fa-solid fa-landmark"></i> Loan Against Property</a></li>' +
       '</ul>' +
     '</li>' +
     '<li class="nav-item"><a class="nav-link" href="#calculator"><i class="fa-solid fa-calculator"></i> Calculator</a></li>' +
@@ -197,7 +197,7 @@
 
   $("#menu").innerHTML = menuHtml;
 
-  // Lenders and facts
+  // Lenders and facts with 3D icons
   var lenders = {};
   Object.keys(D).forEach(function (s) {
     D[s].forEach(function (r) { lenders[r[0]] = 1; });
@@ -205,19 +205,25 @@
   var names = Object.keys(lenders).sort();
 
   $("#facts").innerHTML = [
-    [names.length, "Lending Partners"],
-    [LOANS.length, "Specialized Loans"],
+    ["22", "Lending Partners"],
+    ["4", "Specialized Loans"],
     ["Free", "To Compare & Enquire"],
     ["1 Place", "Rates, Eligibility & Advice"]
   ].map(function (f) {
-    return '<div class="col-6 col-lg-3"><div class="fact"><strong>' + f[0] + '</strong><span>' + f[1] + '</span></div></div>';
+    return (
+      '<div class="col-6 col-lg-3">' +
+      '<div class="fact tilt">' +
+      '<strong>' + f[0] + '</strong>' +
+      '<span>' + f[1] + '</span>' +
+      '</div></div>'
+    );
   }).join("");
 
   // Home Page Loan Cards (Only 4 Loans)
   $("#cards").innerHTML = LOANS.map(function (l) {
     return (
       '<div class="col-sm-6 col-lg-6 col-xl-3">' +
-      '<a class="card3d tilt" href="#' + l.s + '">' +
+      '<a class="card3d tilt" href="' + l.s + '.html">' +
       '<span class="ico3d"><i class="fa-solid ' + l.i + '"></i></span>' +
       '<h3>' + l.n + '</h3>' +
       '<p>' + l.d + '</p>' +
@@ -393,7 +399,12 @@
       '</div>' +
       '</div></section>' +
 
-      '<section class="py-section sec-light"><div class="container">' +
+      '<section class="py-section sec-white sec-relative">' +
+      '<div class="floating-shapes" aria-hidden="true">' +
+        '<div class="f-shape f-orb f-orb-purple anim-pulse-1" style="width: 260px; height: 260px; top: -40px; right: 4%;"></div>' +
+        '<div class="f-shape f-ring anim-spin-1" style="width: 65px; height: 65px; bottom: 30px; left: 6%;"></div>' +
+      '</div>' +
+      '<div class="container position-relative" style="z-index: 1;">' +
       '<h2 class="mb-2">Lenders offering a ' + l.n.toLowerCase() + '</h2>' +
       '<p class="sub">Sorted from the lowest starting rate. Your final rate depends on your financial profile.</p>' +
       '<div class="row g-4">' +
@@ -403,7 +414,7 @@
         if (r[3]) rows += "<dt>Max tenure</dt><dd>" + r[3] + " years</dd>";
         if (r[4]) rows += "<dt>Processing fee</dt><dd>" + r[4] + "</dd>";
         return (
-          '<div class="col-md-6 col-lg-4"><article class="lender tilt">' +
+          '<div class="col-md-6 col-lg-4"><article class="lender tilt card-3d">' +
           (i === 0 ? '<span class="best">Lowest rate</span>' : '') +
           '<h3>' + r[0] + '</h3>' +
           '<div class="rate"><small>from</small> ' + r[1].toFixed(2) + '%<small> a year</small></div>' +
@@ -416,10 +427,15 @@
       '<p class="note">Rates are indicative starting rates per year, compiled from lender websites and public comparison filings (2025 to 2026) and last reviewed in ' + REVIEWED + '. Rates depend on borrower credit score, turnover, and lender policy. Please verify final terms before signing.</p>' +
       '</div></section>' +
 
-      '<section class="py-section sec-dark"><div class="container"><div class="row g-4">' +
-      '<div class="col-lg-4"><div class="panel-box"><h3>Who can apply</h3><p class="mt-3 mb-0 panel-box-text">' + l.e + '</p></div></div>' +
-      '<div class="col-lg-4"><div class="panel-box"><h3>Documents you may need</h3><ul class="mt-3">' + DOCS[l.k].map(function (d) { return "<li>" + d + "</li>"; }).join("") + '</ul></div></div>' +
-      '<div class="col-lg-4"><div class="panel-box"><h3>Before you apply</h3><ul class="mt-3"><li>Check your credit score. 750+ unlocks lowest interest slabs.</li><li>Compare processing fees and prepayment charges alongside rates.</li><li>Ask if the rate is fixed or linked to the repo benchmark.</li><li>Borrow within your comfortable monthly repayment threshold.</li></ul></div></div>' +
+      '<section class="py-section sec-purple sec-relative">' +
+      '<div class="floating-shapes" aria-hidden="true">' +
+        '<div class="f-shape f-orb f-orb-gold anim-pulse-1" style="width: 240px; height: 240px; bottom: -50px; left: 5%;"></div>' +
+        '<div class="f-shape f-cube-gold anim-sway-2" style="width: 42px; height: 42px; top: 25px; right: 8%;"></div>' +
+      '</div>' +
+      '<div class="container position-relative" style="z-index: 1;"><div class="row g-4">' +
+      '<div class="col-lg-4"><div class="panel-box tilt card-3d"><h3>Who can apply</h3><p class="mt-3 mb-0 panel-box-text">' + l.e + '</p></div></div>' +
+      '<div class="col-lg-4"><div class="panel-box tilt card-3d"><h3>Documents you may need</h3><ul class="mt-3">' + DOCS[l.k].map(function (d) { return "<li>" + d + "</li>"; }).join("") + '</ul></div></div>' +
+      '<div class="col-lg-4"><div class="panel-box tilt card-3d"><h3>Before you apply</h3><ul class="mt-3"><li>Check your credit score. 750+ unlocks lowest interest slabs.</li><li>Compare processing fees and prepayment charges alongside rates.</li><li>Ask if the rate is fixed or linked to the repo benchmark.</li><li>Borrow within your comfortable monthly repayment threshold.</li></ul></div></div>' +
       '</div></div></section>';
   }
 

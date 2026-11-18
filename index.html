@@ -35,7 +35,7 @@
 
   <!-- HOME VIEW -->
   <main id="view-home">
-    <!-- SECTION 1: FULL-SECTION HERO CAROUSEL (DIRECT ON PICTURE, NO PURPLE TINT, NO CONTAINER) -->
+    <!-- SECTION 1: FULL-SECTION HERO CAROUSEL (DIRECT ON PICTURE, NO PURPLE TINT, NO CONTAINER, MOBILE-ALIGNED) -->
     <section class="hero-full-section" id="heroSection">
       <div class="hero-carousel-container" id="heroCarousel">
         <!-- Slide 1: Business Loan -->
@@ -53,7 +53,7 @@
                 <span class="hl-chip"><i class="fa-solid fa-shield-halved"></i> 13+ Trusted Lenders</span>
               </div>
               <div class="d-flex flex-wrap gap-3 mt-4">
-                <a class="btn btn-3d" href="#business-loan">Explore business loans</a>
+                <a class="btn btn-3d" href="business-loan.html">Explore business loans</a>
                 <a class="btn btn-3d btn-alt" href="#calculator">Calculate EMI</a>
               </div>
               <ul class="hero-ticks">
@@ -80,7 +80,7 @@
                 <span class="hl-chip"><i class="fa-solid fa-building-columns"></i> 8+ Top Housing Lenders</span>
               </div>
               <div class="d-flex flex-wrap gap-3 mt-4">
-                <a class="btn btn-3d" href="#home-loan">Compare home loans</a>
+                <a class="btn btn-3d" href="home-loan.html">Compare home loans</a>
                 <a class="btn btn-3d btn-alt" href="#calculator">Calculate EMI</a>
               </div>
               <ul class="hero-ticks">
@@ -107,7 +107,7 @@
                 <span class="hl-chip"><i class="fa-solid fa-clock"></i> Up to 20 Yrs Tenure</span>
               </div>
               <div class="d-flex flex-wrap gap-3 mt-4">
-                <a class="btn btn-3d" href="#mortgage-loan">View mortgage rates</a>
+                <a class="btn btn-3d" href="mortgage-loan.html">View mortgage rates</a>
                 <a class="btn btn-3d btn-alt" href="#calculator">Calculate EMI</a>
               </div>
               <ul class="hero-ticks">
@@ -134,7 +134,7 @@
                 <span class="hl-chip"><i class="fa-solid fa-handshake"></i> Top National Lenders</span>
               </div>
               <div class="d-flex flex-wrap gap-3 mt-4">
-                <a class="btn btn-3d" href="#loan-against-property">Explore loan against property</a>
+                <a class="btn btn-3d" href="loan-against-property.html">Explore loan against property</a>
                 <a class="btn btn-3d btn-alt" href="#calculator">Calculate EMI</a>
               </div>
               <ul class="hero-ticks">
@@ -164,25 +164,50 @@
       </div>
     </section>
 
-    <!-- SECTION 2: FACTS (PERMANENT DARK SECTION) -->
-    <section class="facts sec-dark">
-      <div class="container">
-        <div class="row g-3 text-center" id="facts"></div>
+    <!-- SECTION 2: FACTS (CLEAN WHITE 3D SECTION WITH MOVING SHAPES) -->
+    <section class="facts sec-purple sec-relative">
+      <div class="container position-relative" style="z-index: 1;">
+        <div class="row g-3 text-center" id="facts">
+          <div class="col-6 col-lg-3">
+            <div class="fact tilt">
+              <strong>22</strong>
+              <span>Lending Partners</span>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="fact tilt">
+              <strong>4</strong>
+              <span>Specialized Loans</span>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="fact tilt">
+              <strong>Free</strong>
+              <span>To Compare &amp; Enquire</span>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="fact tilt">
+              <strong>1 Place</strong>
+              <span>Rates, Eligibility &amp; Advice</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- SECTION 3: LOANS (PERMANENT LIGHT SECTION) -->
-    <section class="py-section sec-light" id="loans">
-      <div class="container">
+    <!-- SECTION 3: LOANS (WHITE SECTION WITH 3D CARDS & MOVING SHAPES) -->
+    <section class="py-section sec-white sec-relative" id="loans">
+      <div class="container position-relative" style="z-index: 1;">
         <h2>Specialized loans for your goals</h2>
         <p class="sub">Select a loan to view how it works, examine lender interest rate cards, and apply with ease.</p>
         <div class="row g-4" id="cards"></div>
       </div>
     </section>
 
-    <!-- SECTION 4: HOW IT WORKS (PERMANENT DARK SECTION) -->
-    <section class="py-section sec-dark" id="how-it-works">
-      <div class="container">
+    <!-- SECTION 4: HOW IT WORKS (CLEAN WHITE 3D SECTION WITH MOVING SHAPES) -->
+    <section class="py-section sec-purple sec-relative" id="how-it-works">
+      <div class="container position-relative" style="z-index: 1;">
         <h2>How Quick Fund works</h2>
         <p class="sub">Four straightforward steps from comparison to loan disbursal.</p>
         <div class="row g-4">
@@ -214,9 +239,9 @@
       </div>
     </section>
 
-    <!-- SECTION 5: FEATURES (PERMANENT LIGHT SECTION) -->
-    <section class="py-section sec-light" id="features">
-      <div class="container">
+    <!-- SECTION 5: FEATURES (WHITE 3D SECTION WITH MOVING SHAPES) -->
+    <section class="py-section sec-white sec-relative" id="features">
+      <div class="container position-relative" style="z-index: 1;">
         <h2>Why choose Quick Fund</h2>
         <p class="sub">Everything you need to secure the most competitive loan terms in India.</p>
         <div class="row g-4 alt-ico">
@@ -260,12 +285,12 @@
       </div>
     </section>
 
-    <!-- SECTION 6: BENEFITS (PERMANENT DARK SECTION) -->
-    <section class="py-section sec-dark" id="benefits">
-      <div class="container">
+    <!-- SECTION 6: BENEFITS (CLEAN WHITE 3D SECTION WITH MOVING SHAPES) -->
+    <section class="py-section sec-purple sec-relative" id="benefits">
+      <div class="container position-relative" style="z-index: 1;">
         <div class="row g-5 align-items-center">
           <div class="col-lg-5">
-            <div class="benefit-hero">
+            <div class="benefit-hero tilt">
               <h2>Benefits for you</h2>
               <p>Secure the lowest interest rate and save thousands of rupees over your loan tenure.</p>
               <a class="btn btn-3d btn-alt" href="#register">Create a free account</a>
@@ -273,31 +298,31 @@
           </div>
           <div class="col-lg-7">
             <ul class="benefits">
-              <li><span class="bi"><i class="fa-solid fa-clock"></i></span>
+              <li class="tilt"><span class="bi"><i class="fa-solid fa-clock"></i></span>
                 <div>
                   <h3>Save valuable time</h3>
                   <p>Skip branch visits and lengthy phone trees by comparing top lenders online in one place.</p>
                 </div>
               </li>
-              <li><span class="bi g"><i class="fa-solid fa-piggy-bank"></i></span>
+              <li class="tilt"><span class="bi g"><i class="fa-solid fa-piggy-bank"></i></span>
                 <div>
                   <h3>Save money on interest</h3>
                   <p>Spot the most competitive rate and lowest processing fees before committing.</p>
                 </div>
               </li>
-              <li><span class="bi"><i class="fa-solid fa-lightbulb"></i></span>
+              <li class="tilt"><span class="bi"><i class="fa-solid fa-lightbulb"></i></span>
                 <div>
                   <h3>Decide with clarity</h3>
                   <p>Understand your amortization schedule, total interest payable, and eligibility beforehand.</p>
                 </div>
               </li>
-              <li><span class="bi g"><i class="fa-solid fa-hand-holding-heart"></i></span>
+              <li class="tilt"><span class="bi g"><i class="fa-solid fa-hand-holding-heart"></i></span>
                 <div>
                   <h3>100% Free to use</h3>
                   <p>Quick Fund charges zero fees for browsing, comparison, and advisor callbacks.</p>
                 </div>
               </li>
-              <li><span class="bi"><i class="fa-solid fa-user-shield"></i></span>
+              <li class="tilt"><span class="bi"><i class="fa-solid fa-user-shield"></i></span>
                 <div>
                   <h3>Strict data protection</h3>
                   <p>We contact you strictly upon your request and never sell or misuse your private data.</p>
@@ -309,18 +334,18 @@
       </div>
     </section>
 
-    <!-- SECTION 7: PARTNERS (PERMANENT LIGHT SECTION) -->
-    <section class="py-section sec-light" id="partners">
-      <div class="container">
+    <!-- SECTION 7: PARTNERS (WHITE SECTION WITH 3D PILLS & MOVING SHAPES) -->
+    <section class="py-section sec-white sec-relative" id="partners">
+      <div class="container position-relative" style="z-index: 1;">
         <h2>Our lending partners</h2>
         <p class="sub">Compare verified interest rates and terms from India’s premier financial institutions.</p>
         <div class="partners" id="partnerList"></div>
       </div>
     </section>
 
-    <!-- SECTION 8: BEFORE YOU APPLY (PERMANENT DARK SECTION) -->
-    <section class="py-section sec-dark" id="guide">
-      <div class="container">
+    <!-- SECTION 8: BEFORE YOU APPLY (CLEAN WHITE 3D SECTION WITH MOVING SHAPES) -->
+    <section class="py-section sec-purple sec-relative" id="guide">
+      <div class="container position-relative" style="z-index: 1;">
         <div class="row g-5">
           <div class="col-lg-5">
             <h2>Before you apply</h2>
@@ -333,7 +358,7 @@
           </div>
           <div class="col-lg-7">
             <div class="accordion" id="docs">
-              <div class="accordion-item">
+              <div class="accordion-item tilt">
                 <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse"
                     data-bs-target="#d1" aria-expanded="true" aria-controls="d1">Salaried applicants (Home & Property Loans)</button></h3>
                 <div id="d1" class="accordion-collapse collapse show" data-bs-parent="#docs">
@@ -341,7 +366,7 @@
                     last 6 months’ salary account statements, and latest Form 16 / ITR returns.</div>
                 </div>
               </div>
-              <div class="accordion-item">
+              <div class="accordion-item tilt">
                 <h3 class="accordion-header"><button class="accordion-button collapsed" type="button"
                     data-bs-toggle="collapse" data-bs-target="#d2" aria-expanded="false"
                     aria-controls="d2">Business owners & self-employed (Business Loans)</button></h3>
@@ -350,7 +375,7 @@
                     2 to 3 years’ ITR with audited financials, and 6 to 12 months’ current account statements.</div>
                 </div>
               </div>
-              <div class="accordion-item">
+              <div class="accordion-item tilt">
                 <h3 class="accordion-header"><button class="accordion-button collapsed" type="button"
                     data-bs-toggle="collapse" data-bs-target="#d3" aria-expanded="false"
                     aria-controls="d3">Property-backed loans (Mortgage & Loan Against Property)</button></h3>
@@ -365,9 +390,9 @@
       </div>
     </section>
 
-    <!-- SECTION 9: EMI CALCULATOR (PERMANENT LIGHT SECTION) -->
-    <section class="py-section sec-light" id="calculator">
-      <div class="container">
+    <!-- SECTION 9: EMI CALCULATOR (WHITE SECTION WITH 3D CARD & MOVING SHAPES) -->
+    <section class="py-section sec-white sec-relative" id="calculator">
+      <div class="container position-relative" style="z-index: 1;">
         <div class="row g-5 align-items-center">
           <div class="col-lg-5">
             <h2>EMI calculator</h2>
@@ -399,19 +424,19 @@
       </div>
     </section>
 
-    <!-- SECTION 10: FAQ (PERMANENT DARK SECTION) -->
-    <section class="py-section sec-dark" id="faq">
-      <div class="container">
+    <!-- SECTION 10: FAQ (CLEAN WHITE 3D SECTION WITH MOVING SHAPES) -->
+    <section class="py-section sec-purple sec-relative" id="faq">
+      <div class="container position-relative" style="z-index: 1;">
         <h2>Frequently asked questions</h2>
         <p class="sub">Answers to common borrower questions about loans, rates, and eligibility.</p>
         <div class="accordion" id="faqs"></div>
       </div>
     </section>
 
-    <!-- SECTION 11: CTA (PERMANENT VIBRANT SECTION) -->
-    <section class="cta sec-light">
-      <div class="container">
-        <div class="cta-in">
+    <!-- SECTION 11: CTA (3D VIBRANT CARD ON WHITE SECTION) -->
+    <section class="cta sec-white sec-relative">
+      <div class="container position-relative" style="z-index: 1;">
+        <div class="cta-in tilt">
           <div>
             <h2>Not sure which loan fits?</h2>
             <p>Tell us what you need and a certified advisor will point you to the best lenders.</p>
@@ -428,8 +453,8 @@
   <!-- AUTH VIEW (LOGIN / REGISTER) -->
   <main id="view-auth" hidden></main>
 
-  <!-- SECTION 12: FOOTER (PERMANENT DEEP FOOTER) -->
-  <footer class="qf-foot sec-dark-foot">
+  <!-- SECTION 12: FOOTER (CLEAN WHITE 3D FOOTER) -->
+  <footer class="qf-foot sec-purple-foot">
     <div class="container">
       <div class="row g-4">
         <div class="col-lg-4">
@@ -444,15 +469,15 @@
         <div class="col-6 col-lg-2">
           <h3>Home loans</h3>
           <ul>
-            <li><a href="#home-loan">Home loan</a></li>
-            <li><a href="#mortgage-loan">Mortgage loan</a></li>
-            <li><a href="#loan-against-property">Loan against property</a></li>
+            <li><a href="home-loan.html">Home loan</a></li>
+            <li><a href="mortgage-loan.html">Mortgage loan</a></li>
+            <li><a href="loan-against-property.html">Loan against property</a></li>
           </ul>
         </div>
         <div class="col-6 col-lg-2">
           <h3>Business loans</h3>
           <ul>
-            <li><a href="#business-loan">Business loan</a></li>
+            <li><a href="business-loan.html">Business loan</a></li>
             <li><a href="#calculator">EMI Calculator</a></li>
             <li><a href="#how-it-works">How it works</a></li>
           </ul>
@@ -487,7 +512,6 @@
 
   <!-- Floating Sticky Call Button (Bottom Right) -->
   <button type="button" class="floating-call-btn" data-apply aria-label="Request a call back" id="stickyCallBtn">
-    <span class="pulse-ring"></span>
     <i class="fa-solid fa-phone"></i>
     <span>Call Now</span>
   </button>

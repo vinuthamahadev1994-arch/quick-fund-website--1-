@@ -6,35 +6,39 @@
 .hero-full-section {
   position: relative;
   width: 100%;
-  min-height: 600px;
-  max-height: 760px;
+  min-height: 560px;
+  max-height: 720px;
   height: calc(100vh - 82px);
   overflow: hidden;
   background: #111111;
   user-select: none;
   touch-action: pan-y;
+  margin-top: 0;
 }
 
 @media (min-height: 900px) {
   .hero-full-section {
-    max-height: 820px;
+    max-height: 800px;
   }
 }
 
+/* Mobile Responsive: Naturally expandable height so top never clips under navbar and bottom never clips under bottom bar */
 @media (max-width: 991px) {
   .hero-full-section {
-    min-height: 540px;
-    height: auto;
-    max-height: none;
-    padding-bottom: 28px;
+    min-height: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin-top: 0 !important;
   }
 }
 
 @media (max-width: 575px) {
   .hero-full-section {
-    min-height: 510px;
-    height: auto;
-    padding-bottom: 24px;
+    min-height: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
   }
 }
 
@@ -67,7 +71,34 @@
   z-index: 2;
 }
 
-/* Full Bleed Slide Background Image (PURE NATURAL PHOTO, ZERO COLOR FILTER) */
+@media (max-width: 991px) {
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    min-height: 480px;
+    display: flex;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    padding-top: 26px !important;
+    padding-bottom: 86px !important;
+  }
+  .hero-slide.active {
+    position: relative !important;
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-slide {
+    min-height: 440px;
+    padding-top: 24px !important;
+    padding-bottom: 84px !important;
+  }
+}
+
+/* Full Bleed Slide Background Image (PURE NATURAL PHOTO, ZERO PURPLE TINT) */
 .hero-slide-bg {
   position: absolute;
   inset: 0;
@@ -85,14 +116,14 @@
   transform: scale(1);
 }
 
-/* Neutral Gradient Scrim (NO PURPLE TINT - Pure Photo Clarity) */
+/* Neutral Gradient Scrim (NO PURPLE - Pure Photographic Contrast) */
 .hero-slide-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.76) 0%,
-    rgba(0, 0, 0, 0.52) 48%,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.54) 50%,
     rgba(0, 0, 0, 0.22) 80%,
     rgba(0, 0, 0, 0.08) 100%
   );
@@ -104,9 +135,9 @@
   .hero-slide-overlay {
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.78) 0%,
-      rgba(0, 0, 0, 0.65) 50%,
-      rgba(0, 0, 0, 0.82) 100%
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.65) 55%,
+      rgba(0, 0, 0, 0.88) 100%
     );
   }
 }
@@ -115,11 +146,29 @@
 .hero-content-container {
   position: relative;
   z-index: 4;
-  padding-top: 48px;
+  padding-top: 36px;
   padding-bottom: 48px;
+  padding-left: 72px;
+  padding-right: 72px;
 }
 
-/* Direct Hero Content (NO CONTAINER BOX, CONTENT PLACED DIRECTLY ON PICTURE) */
+@media (max-width: 991px) {
+  .hero-content-container {
+    padding-top: 4px !important;
+    padding-bottom: 8px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-content-container {
+    padding-top: 2px !important;
+    padding-bottom: 6px !important;
+  }
+}
+
+/* Direct Hero Content (NO CONTAINER BOX, PLACED DIRECTLY ON PICTURE) */
 .hero-direct-content {
   max-width: 720px;
   position: relative;
@@ -130,7 +179,7 @@
 @keyframes heroContentFadeIn {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
@@ -143,40 +192,68 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: #fbbf24;
   border: 1px solid rgba(251, 191, 36, 0.55);
   font-family: Sora, system-ui, sans-serif;
   font-weight: 700;
-  font-size: 14px;
-  padding: 7px 16px;
+  font-size: 13.5px;
+  padding: 6px 16px;
   border-radius: 99px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 575px) {
+  .hero-direct-content .eyebrow {
+    font-size: 11.5px;
+    padding: 4px 12px;
+    margin-bottom: 8px;
+  }
 }
 
 /* Title directly on photo */
 .hero-direct-content .hero-title {
   font-family: Sora, system-ui, sans-serif;
-  font-size: clamp(32px, 4.6vw, 54px);
+  font-size: clamp(28px, 4.4vw, 50px);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.16;
   letter-spacing: -0.02em;
   color: #ffffff !important;
-  margin: 0 0 16px;
+  margin: 0 0 14px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 4px 22px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 575px) {
+  .hero-direct-content .hero-title {
+    font-size: clamp(22px, 5.8vw, 30px) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 8px !important;
+  }
 }
 
 /* Subtitle lead directly on photo */
 .hero-direct-content .hero-lead {
-  font-size: clamp(16px, 1.9vw, 19.5px);
-  line-height: 1.55;
+  font-size: clamp(15.5px, 1.8vw, 19px);
+  line-height: 1.5;
   color: #ffffff !important;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
   max-width: 650px;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9), 0 2px 14px rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 575px) {
+  .hero-direct-content .hero-lead {
+    font-size: 13.5px !important;
+    line-height: 1.42 !important;
+    margin-bottom: 14px !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
 
 /* Highlight Chips directly on photo */
@@ -184,49 +261,91 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 18px 0;
+  margin: 16px 0;
+}
+
+@media (max-width: 575px) {
+  .hero-highlights {
+    gap: 6px !important;
+    margin: 10px 0 !important;
+  }
 }
 
 .hl-chip {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(0, 0, 0, 0.6);
+  gap: 7px;
+  background: rgba(0, 0, 0, 0.62);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: #ffffff;
-  padding: 7px 15px;
+  padding: 6px 14px;
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 600;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
 }
 
+@media (max-width: 575px) {
+  .hl-chip {
+    padding: 4px 10px;
+    font-size: 11.5px;
+  }
+}
+
 .hl-chip i {
   color: #fbbf24;
+}
+
+/* Action Buttons */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+@media (max-width: 575px) {
+  .hero-actions {
+    gap: 8px !important;
+    margin-top: 6px !important;
+  }
+  .hero-actions .btn {
+    padding: 9px 18px !important;
+    font-size: 13.5px !important;
+  }
 }
 
 /* Trust Ticks directly on photo */
 .hero-direct-content .hero-ticks {
   list-style: none;
   padding: 0;
-  margin: 24px 0 0;
+  margin: 20px 0 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 14px 26px;
+  gap: 12px 24px;
   color: #ffffff;
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 600;
   border-top: 1px solid rgba(255, 255, 255, 0.22);
-  padding-top: 18px;
+  padding-top: 16px;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 575px) {
+  .hero-direct-content .hero-ticks {
+    gap: 6px 14px !important;
+    font-size: 12px !important;
+    margin-top: 10px !important;
+    padding-top: 8px !important;
+  }
 }
 
 .hero-direct-content .hero-ticks li {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
 }
 
 .hero-direct-content .hero-ticks i {
@@ -238,8 +357,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(10px);
@@ -248,7 +367,7 @@
   color: #ffffff;
   display: grid;
   place-items: center;
-  font-size: 18px;
+  font-size: 17px;
   cursor: pointer;
   z-index: 10;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
@@ -267,24 +386,24 @@
 }
 
 .hero-prev-btn {
-  left: 24px;
+  left: 20px;
 }
 
 .hero-next-btn {
-  right: 24px;
+  right: 20px;
 }
 
 @media (max-width: 991px) {
   .hero-nav-btn {
-    width: 42px;
-    height: 42px;
-    font-size: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
   }
   .hero-prev-btn {
-    left: 12px;
+    left: 10px;
   }
   .hero-next-btn {
-    right: 12px;
+    right: 10px;
   }
 }
 
@@ -294,18 +413,18 @@
   }
 }
 
-/* Carousel Indicators */
+/* Carousel Indicators: Safely above the bottom bar on mobile */
 .hero-indicators {
   position: absolute;
-  bottom: 22px;
+  bottom: 18px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   z-index: 10;
   padding: 6px 14px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.72);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 99px;
@@ -313,12 +432,19 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
+@media (max-width: 575px) {
+  .hero-indicators {
+    bottom: 16px;
+    padding: 4px 10px;
+  }
+}
+
 .hero-ind {
   background: rgba(255, 255, 255, 0.38);
   border: 0;
   border-radius: 99px;
-  height: 9px;
-  width: 9px;
+  height: 8px;
+  width: 8px;
   padding: 0;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -327,23 +453,23 @@
 .hero-ind span {
   display: none;
   font-family: Sora, system-ui, sans-serif;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 700;
   color: #1a0f3d;
   white-space: nowrap;
-  padding: 0 10px;
+  padding: 0 8px;
 }
 
 .hero-ind.active {
-  width: 28px;
+  width: 24px;
   background: var(--gold, #f59e0b);
-  box-shadow: 0 0 12px rgba(245, 158, 11, 0.75);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.75);
 }
 
 @media (min-width: 768px) {
   .hero-ind.active {
     width: auto;
-    height: 25px;
+    height: 24px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -380,7 +506,7 @@
   }
 }
 
-/* Neutral Dark Overlay (NO PURPLE TINT - Pure Photo Depth) */
+/* Neutral Dark Overlay (NO PURPLE - Pure Photo Depth) */
 .loan-hero-overlay {
   position: absolute;
   inset: 0;
